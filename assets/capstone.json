@@ -1,0 +1,133 @@
+{
+  "menu": [
+    {
+      "cn": "首頁",
+      "en": "Home",
+      "service": "home",
+      "url": "",
+      "pading": []
+    },
+    {
+      "cn": "關於我們",
+      "en": "About",
+      "service": "about",
+      "url": "about",
+      "pading": [
+        {
+          "cn": "品牌故事",
+          "en": "About us",
+          "service": "aboutus",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "cn": "課程內容",
+      "en": "Course offerings",
+      "service": "course",
+      "url": "",
+      "pading": [
+        {
+          "cn": "師資陣容",
+          "en": "Meet our staff",
+          "service": "staff",
+          "url": ""
+        },
+        {
+          "cn": "學涯規劃",
+          "en": "Education advisory",
+          "service": "advisory",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "cn": "學員分享",
+      "en": "Student feedback",
+      "service": "feedback",
+      "url": "",
+      "pading": []
+    },
+    {
+      "cn": "防疫政策",
+      "en": "COVID-19 policy",
+      "service": "policy",
+      "url": "",
+      "pading": []
+    }
+  ],
+  "agescrollbar": [
+    {
+      "3-10": [
+        {
+          "en": [
+            {
+              "img_src": "./assets/img/age/3_10.jpeg",
+              "header": "3~10",
+              "content": "we offer a uniquely beautiful and inspiring setting, allowing the girls to fully immerse themselves in their learning. All year groups focus on an immersive and holistic curriculum model – The Cranwell Curriculum – which has been designed to be diverse, engaging and girl-centered."
+            }
+          ],
+          "cn": [
+            {
+              "name": "cn 3-10"
+            }
+          ]
+        }
+      ],
+      "11-15": [
+        {
+          "en": [
+            {
+              "img_src": "./assets/img/age/11_15.jpeg",
+              "header": "11-15",
+              "content": "we celebrate the success of all our girls – enabling her to develop the confidence and character to explore her unique talents. Our expert teachers are specialised in a wealth of subjects to encourage our pupils to feed their curiosity and challenge themselves in new ways...."
+            }
+          ],
+          "cn": [
+            {
+              "name": "cn"
+            }
+          ]
+        }
+      ],
+      "16-18": [
+        {
+          "en": [
+            {
+              "img_src": "./assets/img/age/16_18.jpeg",
+              "header": "16-18",
+              "content": "Our Sixth Form is a vibrant, supportive and ambitious place to study.Our girls can choose either A Levels or the International Baccalaureate Diploma – a unique offering in the local area. Both routes allow students to pursue their passions and facilitate entry to the highest quality universities through greater freedom and dynamic ways of learning. Take a look at our latest set of outstanding A Level and IB results."
+            }
+          ],
+          "cn": [
+            {
+              "name": "cn"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "community": [
+    {
+      "name": "Line",
+      "class": "fab fa-line fa-5",
+      "url": "https://line.me/ti/p/vmBwMrebDS"
+    },
+    {
+      "name": "Instagram",
+      "class": "fa fa-instagram fa-5",
+      "url": "https://www.instagram.com/rocky.chen1020/"
+    },
+    {
+      "name": "Facebook",
+      "class": "fa fa-facebook-square fa-5",
+      "url": "https://www.facebook.com/goduu10202200/"
+    },
+    {
+      "name": "Twitter",
+      "class": "fa fa-twitter-square fa-5",
+      "url": "https://twitter.com/?lang=zh-tw"
+    }
+  ]
+}
