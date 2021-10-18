@@ -15,20 +15,20 @@ function _GetUrlLanguage() {
   return ReturnData;
 }
 
-function _SetMainData(len) {
+function _SetMainData(len, page) {
   let _language;
 
   // Detect Language 2021/10/11
-  if (len == undefined) {
+  if (len == undefined || len == "") {
     _language = _GetUrlLanguage();
   } else {
     _language = len;
   }
-
+  console.log("_language", _language);
   if (_language == "EN") {
-    _EnData();
+    _EnData(page);
   } else if (_language == "CN") {
-    _CnData();
+    _CnData(page);
   }
 }
 
@@ -82,18 +82,53 @@ function _SetCommunity() {
 // CommunityTab - E
 
 /* 中英切換 -S */
-function _EnData() {
+function _EnData(page) {
   Menu_Language("en");
-  // PageDescribe
-  $("#PageTitle").text("Welcome");
-  $("#AboutTitle").text("Why Capstone");
+  console.log("page", page);
+  switch (page) {
+    case "home":
+      $("#PageTitle").text("Welcome");
+      break;
+    case "about":
+      About_Language("en");
+      break;
+    case "aboutus":
+      Aboutus_Language("en");
+      break;
+    case "course":
+      Course_Language("en");
+      break;
+    case "staff":
+      Staff_Language("en");
+      break;
+    case "advisory":
+      Advisory_Language("en");
+      break;
+  }
 }
 
-function _CnData() {
-    Menu_Language("cn");
-
-  $("#PageTitle").text("歡迎");
-  $("#AboutTitle").text("為何選擇Capstone");
+function _CnData(page) {
+  Menu_Language("cn");
+  switch (page) {
+    case "home":
+      $("#PageTitle").text("歡迎");
+      break;
+    case "about":
+      About_Language("cn");
+      break;
+    case "aboutus":
+      Aboutus_Language("cn");
+      break;
+    case "course":
+      Course_Language("cn");
+      break;
+    case "staff":
+      Staff_Language("cn");
+      break;
+    case "advisory":
+      Advisory_Language("cn");
+      break;
+  }
 }
 /* 中英切換 -E */
 
@@ -152,5 +187,66 @@ function Menu_Language(lan) {
 
       return returnpage;
     });
+  });
+}
+
+function About_Language(lan) {
+  let dataMenu = _GetMenu();
+  // Clear item
+  $("#AboutTitle").empty();
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 1) {
+      $("#AboutTitle").text(val[lan]);
+    }
+  });
+}
+
+function Aboutus_Language(lan) {
+  let dataMenu = _GetMenu();
+  // Clear item
+  $("#AboutTitle").empty();
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 1) {
+      $("#AboutTitle").text(val["pading"][0][lan]);
+    }
+  });
+}
+
+function Course_Language(lan) {
+  let dataMenu = _GetMenu();
+  // Clear item
+  $("#AboutTitle").empty();
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 2) {
+      $("#AboutTitle").text(val[lan]);
+    }
+  });
+}
+
+function Staff_Language(lan) {
+  let dataMenu = _GetMenu();
+  // Clear item
+  $("#AboutTitle").empty();
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 2) {
+      console.log(val["pading"][0]);
+      $("#AboutTitle").text(val["pading"][0][lan]);
+    }
+  });
+}
+
+function Advisory_Language(lan) {
+  let dataMenu = _GetMenu();
+  // Clear item
+  $("#AboutTitle").empty();
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 2) {
+      $("#AboutTitle").text(val["pading"][1][lan]);
+    }
   });
 }
