@@ -65,12 +65,12 @@
             <div class="language">
                 <ul class="language-navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link language-link" href="#ln=CN" onclick="_SetMainData('CN',set_page);">中</a>
+                        <a class="nav-link language-link" href="#ln=cn" onclick="_SetMainData('cn',set_page);">中</a>
                     </li>
                     <span class="language-sep">|</span>
 
                     <li class="nav-item">
-                        <a class="nav-link language-link" href="#ln=EN" onclick="_SetMainData('EN',set_page);">EN</a>
+                        <a class="nav-link language-link" href="#ln=en" onclick="_SetMainData('en',set_page);">EN</a>
                     </li>
                 </ul>
             </div>
@@ -124,9 +124,18 @@
         let count_about = 0;
         let count_course = 0;
         let set_page = '';
+        // 測試用
+        // let set_page = "staff";
         $(function () {
-            // Detect Language 2021/10/11
             $("#main").load("./home.html");
+
+            // 測試用
+            // $("#main").load("./staff.html");
+
+
+            // $('nav').addClass('navbar-shrink')
+            // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
+            // $('.language-sep').attr('style', 'color:#6c757d')
 
 
             // Include JS Files
@@ -146,6 +155,11 @@
 
             // Set Language
             setTimeout(() => { _SetMainData('', 'home'); }, 100);
+
+            // 測試用
+            // setTimeout(() => {
+            //     _SetMainData('', 'staff');
+            // }, 100);
         })
 
 
@@ -154,14 +168,13 @@
         function ChangePge(page) {
             set_page = page;
 
-            console.log($(window).width())
             /* Change Menu */
             if (page != "home") {
                 $('nav').addClass('navbar-shrink')
                 $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
                 $('.language-sep').attr('style', 'color:#6c757d')
             } else {
-                $('nav').remove('navbar-shrink')
+                $('nav').removeClass('navbar-shrink')
                 $('#cs_logo').attr('src', '~/../assets/img/logo_white.svg')
                 $('.language-sep').removeAttr('style');
             }
@@ -173,7 +186,7 @@
 
                 count_about++;
 
-                // 點擊第二次
+                // 手機或平板裝置 - 點擊第二次
                 if (count_about >= 2 && $(window).width() <= 830) {
                     $("#main").load("./about.html");
                     setTimeout(() => { _SetMainData('', set_page); }, 100);
@@ -193,12 +206,16 @@
                 count_course++;
 
                 // 點擊第二次
-                if (count_course >= 2) {
+                if (count_course >= 2 && $(window).width() <= 830) {
                     $("#main").load("./course.html");
                     setTimeout(() => { _SetMainData('', set_page); }, 100);
                     $('#navbarResponsive').removeClass('show');
                     // 清空課程分頁紀錄
                     count_course = 0
+                } else if ($(window).width() > 830) {
+                    $("#main").load("./course.html");
+                    setTimeout(() => { _SetMainData('', set_page); }, 100);
+                    $('#navbarResponsive').removeClass('show');
                 }
             } else {
                 // 清空紀錄

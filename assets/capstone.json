@@ -56,6 +56,106 @@
       "pading": []
     }
   ],
+  "content": [
+    {
+      "service": "home",
+      "url": ""
+    },
+    {
+      "service": "about",
+      "url": "about"
+    },
+    {
+      "service": "aboutus",
+      "url": ""
+    },
+    {
+      "service": "course",
+      "url": ""
+    },
+    {
+      "service": "staff",
+      "header": [
+        {
+          "en": "Staff",
+          "cn": "師資陣容",
+          "img": "staff.jpeg"
+        }
+      ],
+      "kensilina": {
+        "name": [
+          {
+            "en": "Kensilina Lee",
+            "cn": "確認是否要中文姓名"
+          }
+        ],
+        "introduction": [
+          {
+            "en": "「We must help the child to act for himself, will for himself, think for himself; this is the art of those who aspire to serve the spirit. 」",
+            "cn": "「引導孩子為自己憂深思遠、下定決心、付諸行動，是我們的精神和使命。」"
+          }
+        ],
+        "education": [
+          {
+            "en": "UNIVERSITY OF BATH MSC CHEMISTRY WITH MANAGEMENT(HONS)",
+            "cn": "University of Bath 英國巴斯大學 - 化學&企業管理 雙主修碩士學位"
+          }
+        ],
+        "curriculum": [
+          {
+            "title": [
+              {
+                "en": "SPECIALISED CURRICULUM:",
+                "cn": "授課項目:"
+              }
+            ],
+            "content": {
+              "en": [
+                {
+                  "0": "AP*",
+                  "1": "IB* DIPLOMA/MIDDLE YEARS PROGRAMME",
+                  "2": "I/GCSE",
+                  "3": "GCE AS & A LEVEL",
+                  "4": "INTERNATIONAL CURRICULA",
+                  "5": "PROJECT GEMSTONE"
+                }
+              ],
+              "cn": [
+                {
+                  "0": "AP進階先修課程",
+                  "1": "IB國際文憑中學課程",
+                  "2": "I/GCSE",
+                  "3": "GCE AS&A LEVEL中等教育普通證書",
+                  "4": "INTERNATIONAL CURRICULAR國際課程",
+                  "5": "PROJECT GEMSTONE 寶石計畫"
+                }
+              ]
+            }
+          }
+        ],
+        "specialservice": [
+          {
+            "title": [
+              {
+                "en": "SPECIAL SERVICE",
+                "cn": "特殊服務"
+              }
+            ],
+            "content": [
+              {
+                "en": "UK Education Advisory",
+                "cn": "留英教育諮詢"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "service": "advisory",
+      "url": ""
+    }
+  ],
   "agescrollbar": [
     {
       "3-10": [

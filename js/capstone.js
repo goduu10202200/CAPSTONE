@@ -1,14 +1,14 @@
 // Get URL Language 2021/10/11
 function _GetUrlLanguage() {
-  let ReturnData = "EN";
+  let ReturnData = "en";
   let LanguageSplit = location.href.split("#");
   if (LanguageSplit.length > 1) {
     switch (LanguageSplit[1]) {
-      case "ln=CN":
-        ReturnData = "CN";
+      case "ln=cn":
+        ReturnData = "cn";
         break;
-      case "ln=EN":
-        ReturnData = "EN";
+      case "ln=en":
+        ReturnData = "en";
         break;
     }
   }
@@ -24,10 +24,11 @@ function _SetMainData(len, page) {
   } else {
     _language = len;
   }
-  console.log("_language", _language);
-  if (_language == "EN") {
+  console.log("_SetMainData._language", _language);
+  console.log("_SetMainData.page", page);
+  if (_language == "en") {
     _EnData(page);
-  } else if (_language == "CN") {
+  } else if (_language == "cn") {
     _CnData(page);
   }
 }
@@ -58,6 +59,24 @@ function _GetMenu() {
   });
   return dataMenu;
 }
+
+function _GetContent(page) {
+  let dataContent;
+  $.ajax({
+    type: "POST",
+    url: "./assets/capstone.json",
+    async: false,
+    success: function (data) {
+      $.each(data["content"], function (index, val) {
+        if (val["service"] == page) {
+          dataContent = val;
+          return false;
+        }
+      });
+    },
+  });
+  return dataContent;
+}
 /* Get API - S 2021/10/16 */
 
 // CommunityTab - S
@@ -84,7 +103,7 @@ function _SetCommunity() {
 /* 中英切換 -S */
 function _EnData(page) {
   Menu_Language("en");
-  console.log("page", page);
+
   switch (page) {
     case "home":
       $("#PageTitle").text("Welcome");
@@ -109,6 +128,7 @@ function _EnData(page) {
 
 function _CnData(page) {
   Menu_Language("cn");
+
   switch (page) {
     case "home":
       $("#PageTitle").text("歡迎");
@@ -195,6 +215,12 @@ function About_Language(lan) {
   // Clear item
   $("#AboutTitle").empty();
 
+  // Set Header
+  $("#header_about").css(
+    "background-image",
+    'url("~/../assets/img/page_header/about.jpg")'
+  );
+
   $.each(dataMenu, function (index, val) {
     if (index == 1) {
       $("#AboutTitle").text(val[lan]);
@@ -227,16 +253,26 @@ function Course_Language(lan) {
 }
 
 function Staff_Language(lan) {
-  let dataMenu = _GetMenu();
+  let ReturnDataContent = _GetContent("staff");
+  let DataContent = ReturnDataContent["header"][0];
   // Clear item
   $("#AboutTitle").empty();
 
-  $.each(dataMenu, function (index, val) {
-    if (index == 2) {
-      console.log(val["pading"][0]);
-      $("#AboutTitle").text(val["pading"][0][lan]);
-    }
-  });
+  // Set Header
+  $("#header_staff").css(
+    "background-image",
+    'url("~/../assets/img/page_header/' + DataContent["img"] + '")'
+  );
+
+  console.log("Staff_Language", lan);
+  $("#header_staff h2").text(DataContent[lan]);
+
+  // console.log(dataMenu);
+  // $.each(dataMenu, function (index, val) {
+  //   if (index == 2) {
+  //     $("#AboutTitle").text(val["pading"][0][lan]);
+  //   }
+  // });
 }
 
 function Advisory_Language(lan) {
