@@ -1,3 +1,40 @@
+/* Why Capstone Model - S 2021/11/14 */
+function _ShowCapstoneModel(type) {
+  $("#CapstoneModal").modal("show");
+  switch (type) {
+    case "A":
+      $("#CapstoneModalHeader").text("教室環境");
+      $("#CapstoneModalImg").attr(
+        "src",
+        "./assets/img/portfolio/fullsize/1.jpg"
+      );
+      break;
+    case "B":
+      $("#CapstoneModalHeader").text("硬體設備");
+      $("#CapstoneModalImg").attr(
+        "src",
+        "./assets/img/portfolio/fullsize/2.jpg"
+      );
+      break;
+    case "C":
+      $("#CapstoneModalHeader").text("優質教學");
+      $("#CapstoneModalImg").attr(
+        "src",
+        "./assets/img/portfolio/fullsize/3.jpg"
+      );
+      break;
+    case "D":
+      $("#CapstoneModalHeader").text("特別服務");
+      $("#CapstoneModalImg").attr(
+        "src",
+        "./assets/img/portfolio/fullsize/4.jpg"
+      );
+      break;
+    default:
+  }
+}
+/* Why Capstone Model - E 2021/11/14 */
+
 // Get URL Language 2021/10/11
 function _GetUrlLanguage() {
   let ReturnData = "en";
@@ -24,8 +61,8 @@ function _SetMainData(len, page) {
   } else {
     _language = len;
   }
-  console.log("_SetMainData._language", _language);
-  console.log("_SetMainData.page", page);
+  // console.log("_SetMainData._language", _language);
+  // console.log("_SetMainData.page", page);
   if (_language == "en") {
     _EnData(page);
   } else if (_language == "cn") {
@@ -46,7 +83,6 @@ function _GetCommunity() {
   });
   return dataCommunity;
 }
-
 function _GetMenu() {
   let dataMenu;
   $.ajax({
@@ -77,7 +113,7 @@ function _GetContent(page) {
   });
   return dataContent;
 }
-/* Get API - S 2021/10/16 */
+/* Get API - E 2021/10/16 */
 
 // CommunityTab - S
 var CommunityClose = () => {
@@ -106,7 +142,7 @@ function _EnData(page) {
 
   switch (page) {
     case "home":
-      $("#PageTitle").text("Welcome");
+      Home_Language("en");
       break;
     case "about":
       About_Language("en");
@@ -120,8 +156,38 @@ function _EnData(page) {
     case "staff":
       Staff_Language("en");
       break;
+    case "policy":
+      Policy_Language("en");
+      break;
+    case "resource":
+      Resource_Language("en");
+      break;
+    case "gemstone":
+      Gemstone_Language("en");
+      break;
+    case "course-description":
+      CoursDeescription_Language("en");
+      break;
+    case "verification-course":
+      VerificationCourse_Language("en");
+      break;
     case "advisory":
       Advisory_Language("en");
+      break;
+    case "s-feedback":
+      Sfeedback_Language("en");
+      break;
+    case "s-events":
+      Sevents_Language("en");
+      break;
+    case "admission-process":
+      AdmissionProcess_Language("en");
+      break;
+    case "contact-us":
+      Contactus_Language("en");
+      break;
+    case "traffic-information":
+      TrafficInformation_Language("en");
       break;
   }
 }
@@ -131,7 +197,7 @@ function _CnData(page) {
 
   switch (page) {
     case "home":
-      $("#PageTitle").text("歡迎");
+      Home_Language("cn");
       break;
     case "about":
       About_Language("cn");
@@ -145,8 +211,38 @@ function _CnData(page) {
     case "staff":
       Staff_Language("cn");
       break;
+    case "policy":
+      Policy_Language("cn");
+      break;
+    case "resource":
+      Resource_Language("cn");
+      break;
+    case "gemstone":
+      Gemstone_Language("cn");
+      break;
+    case "course-description":
+      CoursDeescription_Language("cn");
+      break;
+    case "verification-course":
+      VerificationCourse_Language("cn");
+      break;
     case "advisory":
       Advisory_Language("cn");
+      break;
+    case "s-feedback":
+      Sfeedback_Language("cn");
+      break;
+    case "s-events":
+      Sevents_Language("cn");
+      break;
+    case "admission-process":
+      AdmissionProcess_Language("cn");
+      break;
+    case "contact-us":
+      Contactus_Language("cn");
+      break;
+    case "traffic-information":
+      TrafficInformation_Language("cn");
       break;
   }
 }
@@ -210,6 +306,16 @@ function Menu_Language(lan) {
   });
 }
 
+function Home_Language(lan) {
+  let ReturnDataContent = _GetContent("home");
+  let DataHeader = ReturnDataContent["header"]["title"][0];
+
+  // Clear item
+  $("#HeaderTitle").empty();
+
+  $("#HeaderTitle").text(DataHeader[lan]);
+}
+
 function About_Language(lan) {
   let dataMenu = _GetMenu();
   // Clear item
@@ -233,6 +339,12 @@ function Aboutus_Language(lan) {
   // Clear item
   $("#AboutTitle").empty();
 
+  // Set Header
+  $("#header_aboutus").css(
+    "background-image",
+    'url("~/../assets/img/page_header/about.jpg")'
+  );
+
   $.each(dataMenu, function (index, val) {
     if (index == 1) {
       $("#AboutTitle").text(val["pading"][0][lan]);
@@ -245,11 +357,11 @@ function Course_Language(lan) {
   // Clear item
   $("#AboutTitle").empty();
 
-  $.each(dataMenu, function (index, val) {
-    if (index == 2) {
-      $("#AboutTitle").text(val[lan]);
-    }
-  });
+  // Set Header
+  $("#header_course").css(
+    "background-image",
+    'url("~/../assets/img/page_header/about.jpg")'
+  );
 }
 
 function Staff_Language(lan) {
@@ -264,7 +376,6 @@ function Staff_Language(lan) {
     'url("~/../assets/img/page_header/' + DataContent["img"] + '")'
   );
 
-  console.log("Staff_Language", lan);
   $("#header_staff h2").text(DataContent[lan]);
 
   // console.log(dataMenu);
@@ -274,15 +385,32 @@ function Staff_Language(lan) {
   //   }
   // });
 }
+function Policy_Language(lan) {}
 
+
+function Resource_Language(lan) {}
+function Gemstone_Language(lan) {}
+function CoursDeescription_Language(lan) {}
+function VerificationCourse_Language(lan) {}
 function Advisory_Language(lan) {
   let dataMenu = _GetMenu();
   // Clear item
-  $("#AboutTitle").empty();
+  // $("#AboutTitle").empty();
 
-  $.each(dataMenu, function (index, val) {
-    if (index == 2) {
-      $("#AboutTitle").text(val["pading"][1][lan]);
-    }
-  });
+  // Set Header
+  $("#header_advisory").css(
+    "background-image",
+    'url("~/../assets/img/page_header/about.jpg")'
+  );
+
+  // $.each(dataMenu, function (index, val) {
+  //   if (index == 2) {
+  //     $("#AboutTitle").text(val["pading"][1][lan]);
+  //   }
+  // });
 }
+function Sfeedback_Language(lan) {}
+function Sevents_Language(lan) {}
+function AdmissionProcess_Language(lan) {}
+function Contactus_Language(lan) {}
+function TrafficInformation_Language(lan) {}

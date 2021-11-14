@@ -1,4 +1,27 @@
-<header class="masthead">
+<header>
+    <!-- This div is  intentionally blank. It creates the transparent black overlay over the video which you can modify in the CSS -->
+    <div class="overlay"></div>
+
+    <!-- The HTML5 video element that will create the background video on the header -->
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="./assets/img/bg-header.mov" type="video/mp4">
+    </video>
+
+    <!-- The header content -->
+    <div class="container h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <div class="col-lg-12 mb-3">
+                    <h1 id="HeaderTitle" class="text-white">CARRYING YOU TO THE TOP</h1>
+                    <hr class="divider" />
+                </div>
+                <!-- <h1 class="display-3">Welcome</h1> -->
+                <!-- <p class="lead mb-0">Using HTML5 Video and Bootstrap</p> -->
+            </div>
+        </div>
+    </div>
+</header>
+<!-- <header class="masthead">
     <div class="container px-4 px-lg-5 h-100">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
             <div class="col-lg-12 align-self-end mb-3">
@@ -6,44 +29,33 @@
                 <hr class="divider" />
             </div>
             <div class="col-lg-12 align-self-baseline">
-                <p id="PageDescribe" class="text-white-50 mb-5">&nbsp;&nbsp;Through the combination of Montessori pedagogy, Capstone not only thrives for excellence in teaching, but it is also our goal to cultivate an inviting educational environment and resources that support each of our pupil’s unique qualities and abilities for the optimal development of social, emotional and reasoning skills vital for a lifetime of learning, creative thinking, and independence as a contributing member of the global community.</p>
+                <p id="PageDescribe" class="text-white-50 mb-5">&nbsp;&nbsp;Through the combination of Montessori
+                    pedagogy, Capstone not only thrives for excellence in teaching, but it is also our goal to cultivate
+                    an inviting educational environment and resources that support each of our pupil’s unique qualities
+                    and abilities for the optimal development of social, emotional and reasoning skills vital for a
+                    lifetime of learning, creative thinking, and independence as a contributing member of the global
+                    community.</p>
                 <a class="btn btn-primary btn-xl mt-5" href="#about">Find Out More</a>
-                
+
             </div>
         </div>
     </div>
-</header>
-<!-- Tab -->
-<section id="tab">
-    <div>
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-4 tab-primary p-4 text-center">
-                <a class="nav-link" href="#">
-                    <span>Project Gamstone</span>
-                </a>
-            </div>
-            <div class="col-lg-4 p-4 text-center">
-                <a class="nav-link tab-link-black" href="#">
-                    <span>Project Blackstone</span>
-                </a>
-            </div>
-            <div class="col-lg-4 tab-gry p-4 text-center">
-                <a class="nav-link" href="#">
-                    <span>College Consulting</span>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- About-->
-<section class="page-section bg-primary" id="about">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-12 text-center">
-                <h2 class="text-white mt-0">Why Capstone</h2>
-                <hr class="divider divider-light" />
-                <p class="text-white-75 mb-4">We provide pupils with teaching of the highest quality,outstanding learning facilities and a skills development.....</p>
-                <a class="btn btn-light btn-xl" href="#services">Get Started!</a>
+</header> -->
+<!-- Brand -->
+<section class="page-section page-brand bg-primary ">
+    <div class="container px-4 px-lg-5 h-100">
+        <div class="d-flex h-100 text-center align-items-center">
+            <div class="w-100 text-white">
+                <div class="col-lg-12 mb-3">
+                    <div class="text-brand">
+                        <h1 class="text-white">CARRYING </h1>
+                    </div>
+                    <div class="text-brand">
+                        <span>
+                            <h1 class="text-white">YOU TO THE TOP</h1>
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -53,14 +65,84 @@
     <div class="container px-4 px-lg-5">
         <h2 class="text-center mt-0">Why Capstone</h2>
         <hr class="divider" />
-        <div class="row gx-4 gx-lg-5">
+        <!-- Portfolio-->
+        <div id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row g-0" id="instgram_picturewall">
+                    <div class="col-lg-6 col-sm-6 cs-cursor-pointer portfolio-box" onclick="_ShowCapstoneModel('A');">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-75 mb-3">
+                                CAPSTONE
+                            </div>
+                            <div class="text-left project-content">教室環境</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 cs-cursor-pointer portfolio-box" onclick="_ShowCapstoneModel('B');">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-75 mb-3">
+                                CAPSTONE
+                            </div>
+                            <div class="text-left project-content">硬體設備</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 cs-cursor-pointer portfolio-box" onclick="_ShowCapstoneModel('C');">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-75 mb-3">
+                                CAPSTONE
+                            </div>
+                            <div class="text-left project-content">
+                                優質教學
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-6 cs-cursor-pointer portfolio-box" onclick="_ShowCapstoneModel('D');">
+                        <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
+                        <div class="portfolio-box-caption">
+                            <div class="project-category text-white-75 mb-3">
+                                CAPSTONE
+                                <!-- <i class="bi-instagram fs-5 ps-sm-1"></i> -->
+                            </div>
+                            <div class="text-left project-content">
+                                特別服務
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CapstoneModal - S -->
+        <div class="modal fade" id="CapstoneModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-xl modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 id="CapstoneModalHeader" class="modal-title text-dark">Default Bootstrap Modal</h5>
+                        <button class="btn btn-modal-close " type="button" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="bi bi-x"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body text-secondary">
+                        <img id="CapstoneModalImg" class="img-85" alt="Not Found Img" />
+                        <p id="CapstoneModalContent" class="mt-3">
+                            ...
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- CapstoneModal - E -->
+
+        <!-- <div class="row gx-4 gx-lg-5">
             <div class="col-lg-4 col-md-6 text-center">
                 <div class="mt-5">
                     <div class="mb-3">
-                        <i class="fas fa-user-graduate fs-1 text-primary"></i></div>
+                        <i class="fas fa-user-graduate fs-1 text-primary"></i>
+                    </div>
                     <h5 class="mb-2">TEACHING EXCELLENCD</h5>
                     <p class="text-muted mb-0">
-                    We provide puils with teaching of the highest quality.....
+                        We provide puils with teaching of the highest quality.....
                     </p>
                 </div>
             </div>
@@ -87,195 +169,314 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
     </div>
 </section>
-<!-- Portfolio-->
-<div id="portfolio">
-    <div class="container-fluid p-0">
-        <div class="row g-0" id="instgram_picturewall">
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg" title="Project Name">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-                        <div class="project-category text-white-75 mb-3" >
-                            CAPSTONE<i class="bi-instagram fs-5 ps-sm-1"></i>
-                        </div>
-                        <div class="text-left project-content">
-                        COME TO CAPSTONE FOR A "FREE" TRIAL SESSION AND LET ME SHOW YOU HOW CAPSONE CAN CARRY YOU TH THE TOP!                              
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg" title="Project Name">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-                    <div class="project-category text-white-75 mb-3" >
-                            CAPSTONE<i class="bi-instagram fs-5 ps-sm-1"></i>
-                        </div>
-                        <div class="text-left project-content">
-                        COME TO CAPSTONE FOR A "FREE" TRIAL SESSION AND LET ME SHOW YOU HOW CAPSONE CAN CARRY YOU TH THE TOP!                              
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg" title="Project Name">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-                        <div class="project-category text-white-75 mb-3" >
-                            CAPSTONE<i class="bi-instagram fs-5 ps-sm-1"></i>
-                        </div>
-                        <div class="text-left project-content">
-                        COME TO CAPSTONE FOR A "FREE" TRIAL SESSION AND LET ME SHOW YOU HOW CAPSONE CAN CARRY YOU TH THE TOP!                              
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg" title="Project Name">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-                    <div class="project-category text-white-75 mb-3" >
-                            CAPSTONE<i class="bi-instagram fs-5 ps-sm-1"></i>
-                        </div>
-                        <div class="text-left project-content">
-                        COME TO CAPSTONE FOR A "FREE" TRIAL SESSION AND LET ME SHOW YOU HOW CAPSONE CAN CARRY YOU TH THE TOP!                              
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg" title="Project Name">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="..." />
-                    <div class="portfolio-box-caption">
-                    <div class="project-category text-white-75 mb-3" >
-                            CAPSTONE<i class="bi-instagram fs-5 ps-sm-1"></i>
-                        </div>
-                        <div class="text-left project-content">
-                        COME TO CAPSTONE FOR A "FREE" TRIAL SESSION AND LET ME SHOW YOU HOW CAPSONE CAN CARRY YOU TH THE TOP!                              
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg" title="Project Name">
-                    <img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="..." />
-                    <div class="portfolio-box-caption p-3">
-                        <div class="project-category text-white-75 mb-3" >
-                            CAPSTONE<i class="bi-instagram fs-5 ps-sm-1"></i>
-                        </div>
-                        <div class="text-left project-content">
-                        COME TO CAPSTONE FOR A "FREE" TRIAL SESSION AND LET ME SHOW YOU HOW CAPSONE CAN CARRY YOU TH THE TOP!                              
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- Call to action-->
 <section class="container-fluid page-section bg-dark text-white">
     <div class="px-3 px-lg-5 text-center">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-6 text-center mb-5">
-                <img id="img_age" class="img-fluid" src="assets/img/age/3_10.jpeg" alt="..." />
+            <div class="col-lg-12 pb-5">
+                <h2>Interested in joining us?</h2>
             </div>
-            <div class="col-lg-6 ">
-                <h1 class="mb-4">Interested in joining us?</h1>
-                <p class="text-left">
-                    Specialists in girls’ only education for 150 years, our Nursery, Prep, Senior School and Sixth Form are inspirational learning environments where we’ll help your daughter make her mark on the world. Let's get started – tell us your daughter's age...
-                </p>
-                <h3 class="mt-4 col-md-12 col-sm-12 text-left" for="ageInputName" >
+            <div class="col-lg-3 text-center mb-3">
+                <img class=" img-radius cs-cursor-pointer" src="./assets/img/portfolio/fullsize/1.jpg" alt="..."
+                    onclick="_ShowJoinModel('A');" />
+            </div>
+            <div class="col-lg-3 text-center mb-3">
+                <img class="img-radius cs-cursor-pointer" src="./assets/img/portfolio/fullsize/2.jpg" alt="..."
+                    onclick="_ShowJoinModel('B');" />
+            </div>
+            <div class="col-lg-3 text-center mb-3">
+                <img class="img-radius cs-cursor-pointer" src="./assets/img/portfolio/fullsize/3.jpg" alt="..."
+                    onclick="_ShowJoinModel('C');" />
+            </div>
+            <div class="col-lg-3 text-center mb-3">
+                <img class="img-radius cs-cursor-pointer" src="./assets/img/portfolio/fullsize/4.jpg" alt="..."
+                    onclick="_ShowJoinModel('D');" />
+            </div>
+            <div class="col-lg-12 mt-3">
+                <h2 class="col-sm-12 text-center mb-2" for="ageInputName">
                     My daughter's age is...
                     <output class="range-value" id="ageOutputId">3</output>
-                </h3>
-                <div class="row mt-5 text-left">
-                    <div class="col-md-12 col-sm-12 col-lg-12 mt-3">
-                    <span class="range_span">3</span>
-                        <input data-range-input="" type="range" id="ageInputId" name="ageInputName" value="3" min="3" max="18" step="1" oninput="ageOutputId.value = ageInputId.value">
+                </h2>
+                <div class="row text-center mt-4 mb-5">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <span class="range_span">3</span>
+                        <input data-range-input="" type="range" id="ageInputId" name="ageInputName" value="3" min="3"
+                            max="18" step="1" oninput="ageOutputId.value = ageInputId.value">
                         <span class="range_span">18</span>
                     </div>
-                    <!-- <div class="col-md-4">
-                        <button class="btn btn-primary btn-xl"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Find out more</button>
-                    </div> -->
+                    <div class="col-md-2"></div>
                 </div>
             </div>
         </div>
-    </div>   
-    <!-- Modal -->
+    </div>
+    <!-- Modal - S -->
+
+    <div class="modal fade" id="JoinModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-xl modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="JoinModalHeader" class="modal-title text-dark">G1 ~ G6</h5>
+                    <!-- <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <button class="btn btn-modal-close " type="button" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="bi bi-x"></i>
+                    </button>
+                </div>
+                <div class="modal-body text-secondary">
+                    <img id="JoinModalImg" class="img-85" src="./assets/img/portfolio/fullsize/1.jpg"
+                        alt="Not Found Img" />
+                    <p id="ageModalContent" class="mt-3">
+                        ...
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ScrollBar - S -->
     <div class="modal fade" id="ageModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-xl modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 id="ageModalHeader" class="modal-title text-dark" >Default Bootstrap Modal</h5>
+                    <h5 id="ageModalHeader" class="modal-title text-dark">Default Bootstrap Modal</h5>
                     <!-- <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button> -->
                     <button class="btn btn-modal-close " type="button" data-bs-dismiss="modal" aria-label="Close">
-                    <i class="bi bi-x"></i>
+                        <i class="bi bi-x"></i>
                     </button>
                 </div>
                 <div class="modal-body text-secondary">
                     <img id="ageModalImg" class="img-85" alt="Not Found Img" />
                     <p id="ageModalContent" class="mt-3">
-                        Specialists in girls’ only education for 150 years, our Nursery, Prep, Senior School and Sixth Form are inspirational learning environments where we’ll help your daughter make her mark on the world. Let's get started – tell us your daughter's age...
+                        Specialists in girls’ only education for 150 years, our Nursery, Prep, Senior School and
+                        Sixth
+                        Form are inspirational learning environments where we’ll help your daughter make her mark on
+                        the
+                        world. Let's get started – tell us your daughter's age...
                     </p>
                 </div>
-                <!-- <div class="modal-footer">Modal Footer</div> -->
+            </div>
+        </div>
+    </div>
+    <!-- ScrollBar - E -->
+
+    <!-- Modal - E -->
+</section>
+<!-- Contact-->
+<section class="page-section page-background-gray" id="contact">
+    <div class="container px-4 px-lg-6">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+                <h2 class="mt-0">Contact us</h2>
+                <hr class="divider" />
+                <!-- <p class="text-muted mb-5">Make an enquiry via this online form - please note our office hours are 8.30-4.30 Mon-Fri and we aim to reply to your message within 24 hours of receipt.</p> -->
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                <div class="hide-google-map"></div>
+                <!-- <p class="text-center text-primary text-size-5">Instagram</p> -->
+                <blockquote class="instagram-media" data-instgrm-captioned
+                    data-instgrm-permalink="https://www.instagram.com/p/CPX2LfIJ4dz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                    data-instgrm-version="14"
+                    style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+                    <div style="padding:16px;"> <a
+                            href="https://www.instagram.com/p/CPX2LfIJ4dz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                            style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+                            target="_blank">
+                            <div style=" display: flex; flex-direction: row; align-items: center;">
+                                <div
+                                    style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;">
+                                </div>
+                                <div
+                                    style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;">
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;">
+                                    </div>
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 19% 0;"></div>
+                            <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px"
+                                    height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg"
+                                    xmlns:xlink="https://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g transform="translate(-511.000000, -20.000000)" fill="#000000">
+                                            <g>
+                                                <path
+                                                    d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631">
+                                                </path>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg></div>
+                            <div style="padding-top: 8px;">
+                                <div
+                                    style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">
+                                    在 Instagram 查看這則貼文</div>
+                            </div>
+                            <div style="padding: 12.5% 0;"></div>
+                            <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;">
+                                <div>
+                                    <div
+                                        style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);">
+                                    </div>
+                                    <div
+                                        style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;">
+                                    </div>
+                                    <div
+                                        style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);">
+                                    </div>
+                                </div>
+                                <div style="margin-left: 8px;">
+                                    <div
+                                        style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;">
+                                    </div>
+                                    <div
+                                        style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)">
+                                    </div>
+                                </div>
+                                <div style="margin-left: auto;">
+                                    <div
+                                        style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);">
+                                    </div>
+                                    <div
+                                        style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);">
+                                    </div>
+                                    <div
+                                        style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;">
+                                <div
+                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;">
+                                </div>
+                                <div
+                                    style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;">
+                                </div>
+                            </div>
+                        </a>
+                        <p
+                            style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;">
+                            <a href="https://www.instagram.com/p/CPX2LfIJ4dz/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+                                target="_blank">CAPSTONE（@capstone_pgs）分享的貼文</a>
+                        </p>
+                    </div>
+                </blockquote>
+                <script async src="//www.instagram.com/embed.js"></script>
+            </div>
+            <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                <div class="hide-google-map"></div>
+                <div class="wpb_map_wraper google-map">
+                    <!-- <iframe src="https://line.me/ti/p/vmBwMrebDS" scrolling="no" width="640" height="780"></iframe> -->
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                <div class="hide-google-map"></div>
+                <div class="wpb_map_wraper google-map">
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1X0cwYPbun3nngNn03YVORHe1aBnarStw"
+                        width="640" height="780"></iframe>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Contact-->
+<!-- admission process -->
 <section class="page-section" id="contact">
     <div class="container px-4 px-lg-6">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-                <h2 class="mt-0">Let's Get In Touch!</h2>
+                <h2 class="mt-0">ADMISSION PROCESS</h2>
                 <hr class="divider" />
-                <p class="text-muted mb-5">Make an enquiry via this online form - please note our office hours are 8.30-4.30 Mon-Fri and we aim to reply to your message within 24 hours of receipt.</p>
             </div>
+            <!-- <div class="col-lg-12 col-xl-12 text-center">
+                <h2 class="mt-0">ADMISSION PROCESS</h2>
+                <hr class="divider" />
+            </div> -->
         </div>
-        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
-            <div class="col-lg-6">
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                    <!-- Name input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                        <label for="name">Full name</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                    </div>
-                    <!-- Email address input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                    </div>
-                    <!-- Phone number input-->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                        <label for="phone">Phone number</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                    </div>
-                    <!-- Message input-->
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                        <label for="message">Message</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                    </div>
-                    <!-- Submit Button-->
-                    <div style="text-align: center;">
-                        <button type="button" class="btn btn-submit" id="submitButton" >Submit</button>
-                    </div>
-                </form>
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-1">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="block-border ">
+                    <span class="title">MAKE AN INQUIRY</span>
+                    <br>
+                    <span class="describe">WITH OUR ADMINISTRATIVE STAFF</span>
+                </div>
             </div>
+            <div class="col-md-2"></div>
         </div>
-        <!-- <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-4 text-center mb-5 mb-lg-0">
-                <i class="bi-phone fs-2 mb-3 text-muted"></i>
-                <div>+ 886 958322220</div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-1">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+                <i class="fas fa-chevron-down fa-5x text-primary"></i>
             </div>
-        </div> -->
+            <div class="col-md-5"></div>
+        </div>
+
+
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-2">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="block-bgcolor">
+                    <span class="title">SCHEDULE A VISIT</span>
+                    <br>
+                    <span class="describe">FOR INITIAL CONSULTATION & TASTER SESSION</span>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-2">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+                <i class="fas fa-chevron-down fa-5x text-primary"></i>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-3">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="block-border">
+                    <span class="title">SUBMIT REGISTRATION FORM</span>
+                    <br>
+                    <span class="describe">& ALL ABOUT ME FORM</span>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-3">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+                <i class="fas fa-chevron-down fa-5x text-primary"></i>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+
+
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-4">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="block-bgcolor">
+                    <span class="title">NEW STUDENT ORIENTATION</span>
+                    <br>
+                    <span class="describe">REVIEW STUDENT HANDBOOK</span>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mt-3 mb-3 step-4">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+                <i class="fas fa-chevron-down fa-5x text-primary"></i>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
     </div>
 </section>

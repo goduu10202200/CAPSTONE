@@ -18,6 +18,24 @@
           "en": "About us",
           "service": "aboutus",
           "url": ""
+        },
+        {
+          "cn": "師資陣容",
+          "en": "Meet our staff",
+          "service": "staff",
+          "url": ""
+        },
+        {
+          "cn": "課外資源",
+          "en": "課外資源",
+          "service": "resources",
+          "url": ""
+        },
+        {
+          "cn": "防疫政策",
+          "en": "COVID-19 policy",
+          "service": "policy",
+          "url": ""
         }
       ]
     },
@@ -28,13 +46,25 @@
       "url": "",
       "pading": [
         {
-          "cn": "師資陣容",
-          "en": "Meet our staff",
-          "service": "staff",
+          "cn": "Project Gemstone",
+          "en": "Project Gemstone",
+          "service": "gemstone",
           "url": ""
         },
         {
-          "cn": "學涯規劃",
+          "cn": "課綱進度",
+          "en": "課綱進度",
+          "service": "course-description",
+          "url": ""
+        },
+        {
+          "cn": "檢定課程",
+          "en": "檢定課程",
+          "service": "verification-course",
+          "url": ""
+        },
+        {
+          "cn": "升學諮詢",
           "en": "Education advisory",
           "service": "advisory",
           "url": ""
@@ -46,20 +76,65 @@
       "en": "Student feedback",
       "service": "feedback",
       "url": "",
-      "pading": []
+      "pading": [
+        {
+          "cn": "心得單",
+          "en": "Feedback",
+          "service": "s-feedback",
+          "url": ""
+        },
+        {
+          "cn": "課外活動",
+          "en": "Events",
+          "service": "s-events",
+          "url": ""
+        }
+      ]
     },
     {
-      "cn": "防疫政策",
-      "en": "COVID-19 policy",
-      "service": "policy",
+      "cn": "更多資訊",
+      "en": "More Info",
+      "service": "moreinfo",
       "url": "",
-      "pading": []
+      "pading": [
+        {
+          "cn": "如何報名",
+          "en": "Admission Process",
+          "service": "admission-process",
+          "url": ""
+        },
+        {
+          "cn": "聯繫我們",
+          "en": "Contact us",
+          "service": "contact-us",
+          "url": ""
+        },
+        {
+          "cn": "交通資訊",
+          "en": "交通資訊",
+          "service": "traffic-information",
+          "url": ""
+        }
+      ]
     }
   ],
   "content": [
     {
       "service": "home",
-      "url": ""
+      "header": {
+        "title": [
+          {
+            "en": "CARRYING YOU TO THE TOP",
+            "cn": "CARRYING YOU TO THE TOP"
+          }
+        ],
+        "content": [
+           {
+             "en": "CARRYING YOU TO THE TOP",
+             "cn": "CARRYING YOU TO THE TOP"
+           }
+        ]
+      }
     },
     {
       "service": "about",
@@ -67,7 +142,106 @@
     },
     {
       "service": "aboutus",
-      "url": ""
+      "teaching": {
+        "title": [
+          {
+            "en": "TEACHING EXCELLENCE",
+            "cn": "卓越教學"
+          }
+        ],
+        "content": {
+          "en": "We provide pupils with teaching of the highest quality, outstanding learning facilities and a skills development programme tailored to meet their academic and personal needs so that they can make the most of their time at Capstone. Our academic programmes are designed to provide both rigorous intellectual challenge and real-world relevance, giving pupils the most up-to-date topics.",
+          "cn": "CAPSTONE不僅提供學員最優秀的教學品質和硬體設備，量身打造的教學模式更能使學員發揮自身的最大價值，使其在學業上有顯著的進步和成長。除了進行縝密的訓練，授課講師也會經常分享國際社會的最新資訊，幫助學員補充課外知識。"
+        }
+      },
+      "facility": {
+        "title": [
+          {
+            "en": "STATE OF THE ART ACADEMIC FACILITY",
+            "cn": "最先進的教學設備"
+          }
+        ],
+        "content": {
+          "en": "We continuously invest in new teaching facilities and smart learning spaces for our pupils. We are regularly upgrading our virtual learning environment to ensure that the learning materials and recorded sessions are easily accessible and complement pupils’ in-person teaching.",
+          "cn": "我們持續更新先進的硬體設備及智慧教學環境，確保學員能便利的使用教學素材及線上課程，滿足學習需求。"
+        },
+        "tools": {
+          "en": [
+            {
+              "0": "AI TECH",
+              "1": "INTERACTIVE DIGITAL BOARD"
+            }
+          ],
+          "cn": [
+            {
+              "0": "AI自動追蹤攝影",
+              "1": "互動性數位電子白板"
+            }
+          ]
+        }
+      },
+      "advantages": {
+        "title": [
+          {
+            "en": "ADVANTAGES",
+            "cn": "我們的優勢"
+          }
+        ],
+        "content": {
+          "en": "In addition to subject specific-skills development embedded in the course, we offer a progress tracking system which is designed to meet each pupil's academic and personal development needs. This will help the students get the best out of their studies, recognise their strengths, enhance their area for development and achieve success in their further endeavour.",
+          "cn": "根據每位學員的需求，除了專業的課程，我們也提供個人化的定期追蹤系統。讓學員能夠有效率地學習，知悉自己的強弱項，進而達成目標。"
+        },
+        "tools": {
+          "en": [
+            {
+              "0": "BIG DATA ANALYTICS",
+              "1": "CUSTOMISED TIMETABLE"
+            }
+          ],
+          "cn": [
+            {
+              "0": "數據分析",
+              "1": "客製化安排"
+            }
+          ]
+        }
+      },
+      "virtualsessions": {
+        "title": [
+          {
+            "en": "VIRTUAL SESSIONS",
+            "cn": "線上課程"
+          }
+        ],
+        "content": {
+          "en": [
+            {
+              "0": "LIVE VIA ZOOM",
+              "1": "4K QUALITY",
+              "2": "LIVE STREAMED",
+              "3": "HIGHLY INTERACTIVE",
+              "4": "RECORDED FOR FUTURE REVIEWS",
+              "5": "BEHAVIOURAL ANALYTICS"
+            }
+          ],
+          "cn": [
+            {
+              "0": "ZOOM教學平台",
+              "1": "4K高畫質",
+              "2": "Live教學",
+              "3": "高度互動",
+              "4": "錄製課程",
+              "5": "學員分析"
+            }
+          ]
+        },
+        "introduction": [
+          {
+            "en": "SCHEDULED AT YOUR OWN PACE REGARDLESS OF YOUR TIMEZONE",
+            "cn": "一步一腳印，每個人都會在自己的時區準時"
+          }
+        ]
+      }
     },
     {
       "service": "course",
@@ -97,7 +271,7 @@
         ],
         "education": [
           {
-            "en": "UNIVERSITY OF BATH MSC CHEMISTRY WITH MANAGEMENT(HONS)",
+            "en": "UNIVERSITY OF BATH MSC CHEMISTRY WITH MANAGEMENT (HONS)",
             "cn": "University of Bath 英國巴斯大學 - 化學&企業管理 雙主修碩士學位"
           }
         ],
@@ -137,14 +311,78 @@
           {
             "title": [
               {
-                "en": "SPECIAL SERVICE",
+                "en": "SPECIAL SERVICE:",
                 "cn": "特殊服務"
               }
             ],
             "content": [
               {
-                "en": "UK Education Advisory",
+                "en": "UK EDUCATION ADVISORY",
                 "cn": "留英教育諮詢"
+              }
+            ]
+          }
+        ]
+      },
+      "shying": {
+        "name": [
+          {
+            "en": "SHYING TSUI",
+            "cn": "確認是否要中文姓名"
+          }
+        ],
+        "introduction": [
+          {
+            "en": "「Action is the real measure of intelligence. 」",
+            "cn": "「行動，是決定智慧的真正標準。」"
+          }
+        ],
+        "education": [
+          {
+            "en": "GEORGETOWN UNIVERSITY MA LIBERAL STUDIES",
+            "cn": "美國喬治城大學文學研究碩士"
+          }
+        ],
+        "curriculum": [
+          {
+            "title": [
+              {
+                "en": "SPECIALISED CURRICULUM:",
+                "cn": "授課項目:"
+              }
+            ],
+            "content": {
+              "en": [
+                {
+                  "0": "ACT*",
+                  "1": "PAST",
+                  "2": "SAT",
+                  "3": "TOEFL"
+                }
+              ],
+              "cn": [
+                {
+                  "0": "美國大學入學考試",
+                  "1": "美國高考預考",
+                  "2": "美國高考",
+                  "3": "托福測驗"
+                }
+              ]
+            }
+          }
+        ],
+        "specialservice": [
+          {
+            "title": [
+              {
+                "en": "SPECIAL SERVICE:",
+                "cn": "特殊服務"
+              }
+            ],
+            "content": [
+              {
+                "en": "US EDUCATION ADVISORY",
+                "cn": "留美教育諮詢"
               }
             ]
           }
@@ -162,7 +400,7 @@
         {
           "en": [
             {
-              "img_src": "./assets/img/age/3_10.jpeg",
+              "img_src": "./assets/img/page/home/age/3_10.jpeg",
               "header": "3~10",
               "content": "we offer a uniquely beautiful and inspiring setting, allowing the girls to fully immerse themselves in their learning. All year groups focus on an immersive and holistic curriculum model – The Cranwell Curriculum – which has been designed to be diverse, engaging and girl-centered."
             }
@@ -178,7 +416,7 @@
         {
           "en": [
             {
-              "img_src": "./assets/img/age/11_15.jpeg",
+              "img_src": "./assets/img/page/home/age/11_15.jpeg",
               "header": "11-15",
               "content": "we celebrate the success of all our girls – enabling her to develop the confidence and character to explore her unique talents. Our expert teachers are specialised in a wealth of subjects to encourage our pupils to feed their curiosity and challenge themselves in new ways...."
             }
@@ -194,7 +432,7 @@
         {
           "en": [
             {
-              "img_src": "./assets/img/age/16_18.jpeg",
+              "img_src": "./assets/img/page/home/age/16_18.jpeg",
               "header": "16-18",
               "content": "Our Sixth Form is a vibrant, supportive and ambitious place to study.Our girls can choose either A Levels or the International Baccalaureate Diploma – a unique offering in the local area. Both routes allow students to pursue their passions and facilitate entry to the highest quality universities through greater freedom and dynamic ways of learning. Take a look at our latest set of outstanding A Level and IB results."
             }
