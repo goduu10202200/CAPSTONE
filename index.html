@@ -7,16 +7,19 @@
     <title>CAPSTONE</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-    <!-- Bootstrap Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-        rel="stylesheet" type="text/css" />
-    <!-- SimpleLightbox plugin CSS-->
+
     <link href="./css/simpleLightbox.min.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
     <link href="./css/styles.css" rel="stylesheet" />
+
+
+
+    <!-- Bootstrap Icons-->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
+    <!-- Google fonts-->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+            rel="stylesheet" type="text/css" /> -->
+    <!-- SimpleLightbox plugin CSS-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 
@@ -83,7 +86,8 @@
     <div id="main"></div>
     <!-- main - E 2021/10/10 -->
 
-    <div>
+    <!-- Community - S 2021/10/10 -->
+    <!-- <div>
         <div id="CommunityTap" class="toTop-arrow">
             <i class="far fa-comments fs-0 toTop-icon"></i>
         </div>
@@ -97,7 +101,8 @@
                 <ul id="CommunityUl"></ul>
             </div>
         </div>
-    </div>
+    </div> -->
+    <!-- Community - E 2021/10/10 -->
 
     <!-- Footer - S 2021/09/17 -->
     <footer class="bg-light py-5">
@@ -110,19 +115,19 @@
     <script type="text/javascript" src="js/jquery-3.6.min.js"></script>
 
     <!-- Bootstrap core JS -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="js/bootstrap.bundle.min.js"></script>
+
     <!-- SimpleLightbox plugin JS -->
     <script type="text/javascript" src="./js/simpleLightbox.min.js"></script>
+
     <!-- fontawesome JS -->
-    <script type="text/javascript" src="https://kit.fontawesome.com/8c58c1b4a6.js"></script>
+    <script type="text/javascript" src="./js/fontawesome.js"></script>
+
+    <!-- <script src="https://www.instagram.com/embed.js"></script> -->
+
     <!-- Core theme JS -->
     <script type="text/javascript" src="./js/scripts.js"></script>
-
     <script type="text/javascript" src="./js/capstone.js"></script>
-
-
-
 
     <script>
         let count_about = 0;
@@ -130,185 +135,46 @@
         let set_page = '';
 
         $(function () {
-            $("#main").load("./home.html");
+            // Include JS Files
+            // $.getScript("./js/scrollbar.js")
+
+            $("#main").load("./page/home.html");
+
+            // 預設語言 Language
+            setTimeout(() => { _SetMainData('', 'home'); }, 100);
 
             // 測試用
-            // $("#main").load("./trafficinformation.html");
-
+            //$("#main").load("./trafficinformation.html");
+            // setTimeout(() => {
+            //     _SetMainData('', 'policy');
+            // }, 100);
 
             // $('nav').addClass('navbar-shrink')
             // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
             // $('.language-sep').attr('style', 'color:#6c757d')
-
-
-            // Include JS Files
-            $.getScript("./js/scrollbar.js")
-
-            /* Commuinty Tab - S 2021/10/11 */
-            $('#CommunityTap').click(function () {
-                if ($('.CommunityTap-content').css('display') == 'none') {
-                    $('.CommunityTap-content').fadeIn(200)
-                } else {
-                    $('.CommunityTap-content').fadeOut(200)
-                }
-            });
-
-            _SetCommunity();
-            /* Commuinty Tab - E 2021/10/11 */
-
-            // Set Language
-            setTimeout(() => { _SetMainData('', 'home'); }, 100);
-
-            // 測試用
-            // setTimeout(() => {
-            //     _SetMainData('', 'policy');
-            // }, 100);
         })
 
+        /* Commuinty Tab - S 2021/12/26 */
+        GetCommunity().then(() => {
+            // 隱藏文字
+            setTimeout(() => {
+                $(".sc-7dvmpp-1").css("display", "none")
+            }, 2000);
+        })
+        /* Commuinty Tab - E 2021/12/26 */
 
+        /* Commuinty Tab(客製) - S 2021/10/11 */
+            // $('#CommunityTap').click(function () {
+            //     if ($('.CommunityTap-content').css('display') == 'none') {
+            //         $('.CommunityTap-content').fadeIn(200)
+            //     } else {
+            //         $('.CommunityTap-content').fadeOut(200)
+            //     }
+            // });
 
-        // Menu Change
-        function ChangePge(page) {
-            set_page = page;
+            // _SetCommunity();
 
-            /* Change Menu */
-            if (page == 'home') {
-                $('nav').removeClass('navbar-shrink')
-                $('#cs_logo').attr('src', '~/../assets/img/logo_white.svg')
-                $('.language-sep').removeAttr('style')
-            } else {
-                /* Menu 變白底 */
-                // $('nav').addClass('navbar-shrink')
-                // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
-                // $('.language-sep').attr('style', 'color:#6c757d')
-            }
-
-
-
-            if (page == "about") {
-                // 清空課程分頁紀錄
-                count_course = 0
-
-                count_about++;
-
-                // 手機或平板裝置 - 點擊第二次
-                // if (count_about >= 2 && $(window).width() <= 830) {
-                //     $("#main").load("./about.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-
-                //     // 清空關於我們分頁紀錄
-                //     count_about = 0
-                // } else if ($(window).width() > 830) {
-                //     $("#main").load("./about.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-                // }
-            } else if (page == "course") {
-                // 清空關於我們分頁紀錄
-                count_about = 0
-
-                count_course++;
-
-                // // 點擊第二次
-                // if (count_course >= 2 && $(window).width() <= 830) {
-                //     $("#main").load("./course.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-                //     // 清空課程分頁紀錄
-                //     count_course = 0
-                // } else if ($(window).width() > 830) {
-                //     $("#main").load("./course.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-                // }
-            } else {
-                // 清空紀錄
-                count_course = 0
-                count_about = 0
-
-                switch (page) {
-                    case "home":
-                        $("#main").load("./home.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "aboutus":
-                        $("#main").load("./aboutus.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "staff":
-                        $("#main").load("./staff.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "resource":
-                        $("#main").load("./resource.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "policy":
-                        $("#main").load("./policy.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "resources":
-                        $("#main").load("./resources.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "gemstone":
-                        $("#main").load("./gemstone.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "course-description":
-                        $("#main").load("./coursedescription.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "verification-course":
-                        $("#main").load("./verificationcourse.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "advisory":
-                        $("#main").load("./advisory.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "s-feedback":
-                        $("#main").load("./sfeedback.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "s-events":
-                        $("#main").load("./sevents.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "admission-process":
-                        $("#main").load("./admissionprocess.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-
-
-                    case "contact-us":
-                        $("#main").load("./contactus.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                    case "traffic-information":
-                        $("#main").load("./trafficinformation.html");
-                        $('#navbarResponsive').removeClass('show');
-                        setTimeout(() => { _SetMainData('', set_page); }, 100);
-                        break;
-                }
-            }
-
-        }
+        /* Commuinty Tab - E 2021/10/11 */
     </script>
 </body>
 
