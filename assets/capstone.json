@@ -54,13 +54,13 @@
         {
           "cn": "課綱進度",
           "en": "課綱進度",
-          "service": "course-description",
+          "service": "coursedescription",
           "url": ""
         },
         {
           "cn": "檢定課程",
           "en": "檢定課程",
-          "service": "verification-course",
+          "service": "verificationcourse",
           "url": ""
         },
         {
@@ -74,19 +74,18 @@
     {
       "cn": "學員分享",
       "en": "Student feedback",
-      "service": "feedback",
       "url": "",
       "pading": [
         {
           "cn": "心得單",
           "en": "Feedback",
-          "service": "s-feedback",
+          "service": "sfeedback",
           "url": ""
         },
         {
           "cn": "課外活動",
           "en": "Events",
-          "service": "s-events",
+          "service": "sevents",
           "url": ""
         }
       ]
@@ -100,19 +99,19 @@
         {
           "cn": "如何報名",
           "en": "Admission Process",
-          "service": "admission-process",
+          "service": "admissionprocess",
           "url": ""
         },
         {
           "cn": "聯繫我們",
           "en": "Contact us",
-          "service": "contact-us",
+          "service": "contactus",
           "url": ""
         },
         {
           "cn": "交通資訊",
           "en": "交通資訊",
-          "service": "traffic-information",
+          "service": "trafficinformation",
           "url": ""
         }
       ]
@@ -129,10 +128,10 @@
           }
         ],
         "content": [
-           {
-             "en": "CARRYING YOU TO THE TOP",
-             "cn": "CARRYING YOU TO THE TOP"
-           }
+          {
+            "en": "CARRYING YOU TO THE TOP",
+            "cn": "CARRYING YOU TO THE TOP"
+          }
         ]
       }
     },

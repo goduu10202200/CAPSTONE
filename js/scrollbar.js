@@ -1,21 +1,19 @@
-function _ShowJoinModel(type) {
+function _ShowJoinModel(el, type) {
   $("#JoinModal").modal("show");
+  const el_src = el.getAttribute("src");
+  $("#JoinModalImg").attr("src", el_src);
   switch (type) {
     case "A":
       $("#JoinModalHeader").text("G1 ~ G6");
-      $("#JoinModalImg").attr("src", "./assets/img/portfolio/fullsize/1.jpg");
       break;
     case "B":
       $("#JoinModalHeader").text("G7 ~ G9");
-      $("#JoinModalImg").attr("src", "./assets/img/portfolio/fullsize/2.jpg");
       break;
     case "C":
       $("#JoinModalHeader").text("G10 ~ G12");
-      $("#JoinModalImg").attr("src", "./assets/img/portfolio/fullsize/3.jpg");
       break;
     case "D":
       $("#JoinModalHeader").text("Education Advisory");
-      $("#JoinModalImg").attr("src", "./assets/img/portfolio/fullsize/4.jpg");
       break;
     default:
   }

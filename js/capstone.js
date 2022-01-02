@@ -1,34 +1,21 @@
 /* Why Capstone Model - S 2021/11/14 */
-function _ShowCapstoneModel(type) {
+function _ShowCapstoneModel(el, type) {
+  const el_src = $(el).find("img").attr("src");
+  $("#CapstoneModalImg").attr("src", el_src);
   $("#CapstoneModal").modal("show");
+
   switch (type) {
-    case "A":
+    case "classroom":
       $("#CapstoneModalHeader").text("教室環境");
-      $("#CapstoneModalImg").attr(
-        "src",
-        "./assets/img/portfolio/fullsize/1.jpg"
-      );
       break;
-    case "B":
+    case "equipment":
       $("#CapstoneModalHeader").text("硬體設備");
-      $("#CapstoneModalImg").attr(
-        "src",
-        "./assets/img/portfolio/fullsize/2.jpg"
-      );
       break;
-    case "C":
+    case "teaching":
       $("#CapstoneModalHeader").text("優質教學");
-      $("#CapstoneModalImg").attr(
-        "src",
-        "./assets/img/portfolio/fullsize/3.jpg"
-      );
       break;
-    case "D":
+    case "service":
       $("#CapstoneModalHeader").text("特別服務");
-      $("#CapstoneModalImg").attr(
-        "src",
-        "./assets/img/portfolio/fullsize/4.jpg"
-      );
       break;
     default:
   }
@@ -38,7 +25,9 @@ function _ShowCapstoneModel(type) {
 /* 選單切換 - S */
 // Menu Change
 function ChangePge(page) {
-  set_page = page;
+  let count_about = 0,
+    count_course = 0;
+  let set_page = page;
 
   /* Change Menu */
   if (page == "home") {
@@ -95,113 +84,124 @@ function ChangePge(page) {
     count_course = 0;
     count_about = 0;
 
-    switch (page) {
-      case "home":
-        $("#main").load("./page/home.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "aboutus":
-        $("#main").load("./page/aboutus.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "staff":
-        $("#main").load("./page/staff.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "resource":
-        $("#main").load("./page/resource.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "policy":
-        $("#main").load("./page/policy.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "resources":
-        $("#main").load("./page/resources.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "gemstone":
-        $("#main").load("./page/gemstone.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "course-description":
-        $("#main").load("./page/coursedescription.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "verification-course":
-        $("#main").load("./page/verificationcourse.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "advisory":
-        $("#main").load("./page/page/advisory.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "s-feedback":
-        $("#main").load("./page/sfeedback.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "s-events":
-        $("#main").load("./page/sevents.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "admission-process":
-        $("#main").load("./page/admissionprocess.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "contact-us":
-        $("#main").load("./page/contactus.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-      case "traffic-information":
-        $("#main").load("./page/trafficinformation.html");
-        $("#navbarResponsive").removeClass("show");
-        setTimeout(() => {
-          _SetMainData("", set_page);
-        }, 100);
-        break;
-    }
+    $("#navbarResponsive").removeClass("show");
+    $("#main").load("./page/" + page + ".html", function (data) {
+      _SetMainData("", set_page);
+    });
+
+    // 舊的寫法~~
+    // $("#main").load("./page/" + page + ".html");
+    // setTimeout(() => {
+    //   _SetMainData("", set_page);
+    // }, 2000);
+
+    // switch (page) {
+    //   case "home":
+    //     $("#main").load("./page/home.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "aboutus":
+    //     $("#main").load("./page/aboutus.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "staff":
+    //     $("#main").load("./page/staff.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "resource":
+    //     $("#main").load("./page/resource.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "policy":
+    //     $("#main").load("./page/policy.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "resources":
+    //     $("#main").load("./page/resources.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "gemstone":
+    //     $("#main").load("./page/gemstone.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "course-description":
+    //     $("#main").load("./page/coursedescription.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "verification-course":
+    //     $("#main").load("./page/verificationcourse.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "advisory":
+    //     $("#main").load("./page/page/advisory.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "s-feedback":
+    //     $("#main").load("./page/sfeedback.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "s-events":
+    //     $("#main").load("./page/sevents.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "admission-process":
+    //     $("#main").load("./page/admissionprocess.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "contact-us":
+    //     $("#main").load("./page/contactus.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    //   case "traffic-information":
+    //     $("#main").load("./page/trafficinformation.html");
+    //     $("#navbarResponsive").removeClass("show");
+    //     setTimeout(() => {
+    //       _SetMainData("", set_page);
+    //     }, 100);
+    //     break;
+    // }
   }
 }
 /* 選單切換 - E */
@@ -509,7 +509,7 @@ function Aboutus_Language(lan) {
   let dataMenu = _GetMenu();
   // Clear item
   $("#AboutTitle").empty();
-
+  $("#header_aboutus").empty();
   // Set Header
   $("#header_aboutus").css(
     "background-image",
@@ -538,8 +538,6 @@ function Course_Language(lan) {
 function Staff_Language(lan) {
   let ReturnDataContent = _GetContent("staff");
   let DataContent = ReturnDataContent["header"][0];
-  // Clear item
-  $("#AboutTitle").empty();
 
   // Set Header
   $("#header_staff").css(
@@ -586,11 +584,11 @@ function Contactus_Language(lan) {}
 function TrafficInformation_Language(lan) {}
 
 //社群按鈕
-async function GetCommunity() {
+function GetCommunity() {
   var options = {
     line: "//line.me/ti/p/vmBwMrebDS", // Line QR code URL
     instagram: "capstone_tw", // Instagram username
-    call_to_action: "Message us", // Call to action
+    // call_to_action: "Message us", // Call to action
     button_color: "#129BF4", // Color of button
     position: "right", // Position may be 'right' or 'left'
     order: "instagram,line", // Order of buttons
@@ -598,13 +596,14 @@ async function GetCommunity() {
   var proto = document.location.protocol,
     host = "getbutton.io",
     url = proto + "//static." + host;
+
   var s = document.createElement("script");
   s.type = "text/javascript";
   s.async = true;
   s.src = url + "/widget-send-button/js/init.js";
-  s.onload = await function () {
+  s.onload = function () {
     WhWidgetSendButton.init(host, proto, options);
   };
-  var x = await document.getElementsByTagName("script")[0];
+  var x = document.getElementsByTagName("script")[0];
   x.parentNode.insertBefore(s, x);
 }

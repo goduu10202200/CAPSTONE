@@ -130,13 +130,8 @@
     <script type="text/javascript" src="./js/capstone.js"></script>
 
     <script>
-        let count_about = 0;
-        let count_course = 0;
-        let set_page = '';
-
         $(function () {
-            // Include JS Files
-            // $.getScript("./js/scrollbar.js")
+
 
             $("#main").load("./page/home.html");
 
@@ -152,29 +147,48 @@
             // $('nav').addClass('navbar-shrink')
             // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
             // $('.language-sep').attr('style', 'color:#6c757d')
+
+            // Commuinty Button
+            GetCommunity()
         })
 
-        /* Commuinty Tab - S 2021/12/26 */
-        GetCommunity().then(() => {
-            // 隱藏文字
+        $(window).on('load', function () {
             setTimeout(() => {
-                $(".sc-7dvmpp-1").css("display", "none")
-            }, 2000);
-        })
+                // 隱藏社群按鈕文字
+                $(".sc-7dvmpp-1").css("display", "none");
+            }, 1000);
+            // Include JS Files
+            $.getScript("./js/scrollbar.js")
+        });
+        /* Commuinty Tab - S 2021/12/26 */
+
+
+
+        // GetCommunity().then(() => {
+        //     console.log('1')
+        //     // 隱藏文字
+        //     setTimeout(() => {
+        //         console.log('2')
+        //         $(".sc-7dvmpp-1").css("display", "none")
+        //     }, 2000);
+        // })
+
+
         /* Commuinty Tab - E 2021/12/26 */
 
         /* Commuinty Tab(客製) - S 2021/10/11 */
-            // $('#CommunityTap').click(function () {
-            //     if ($('.CommunityTap-content').css('display') == 'none') {
-            //         $('.CommunityTap-content').fadeIn(200)
-            //     } else {
-            //         $('.CommunityTap-content').fadeOut(200)
-            //     }
-            // });
+        // $('#CommunityTap').click(function () {
+        //     if ($('.CommunityTap-content').css('display') == 'none') {
+        //         $('.CommunityTap-content').fadeIn(200)
+        //     } else {
+        //         $('.CommunityTap-content').fadeOut(200)
+        //     }
+        // });
 
-            // _SetCommunity();
+        // _SetCommunity();
 
         /* Commuinty Tab - E 2021/10/11 */
+
     </script>
 </body>
 
