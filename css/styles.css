@@ -12851,6 +12851,17 @@ input[type="range"]::-moz-range-thumb {
   z-index: -2;
 }
 
+.cs-bg .overlay-primary {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  background: rgba(181, 156, 90, 0.37);
+  z-index: -2;
+}
+
 .cs-bg .backdrop-blur-2 {
   backdrop-filter: blur(2px);
 }
