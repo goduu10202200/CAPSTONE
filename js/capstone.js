@@ -131,8 +131,8 @@ function ChangePge(page) {
     //       _SetMainData("", set_page);
     //     }, 100);
     //     break;
-    //   case "resources":
-    //     $("#main").load("./page/resources.html");
+    //   case "resource":
+    //     $("#main").load("./page/resource.html");
     //     $("#navbarResponsive").removeClass("show");
     //     setTimeout(() => {
     //       _SetMainData("", set_page);
