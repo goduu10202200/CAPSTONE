@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap");
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -54,13 +55,16 @@
   --bs-body-font-family: Merriweather, -apple-system, BlinkMacSystemFont,
     Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --cs-font-family: "Josefin Sans", sans-serif;
   --bs-body-font-size: 1rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
+  --cs-btn-primary:#CFC8BA;
   --cs-color: #b59e61;
   --cs-text: #d8b853;
+  --cs-bg-primity: #bea973;
   --cs-color-rgb: 181, 158, 97;
 }
 
@@ -75,7 +79,10 @@
     scroll-behavior: smooth;
   }
 }
-
+/* @font-face {
+  font-family: 'Josefin Sans', sans-serif;
+  src: url("../assets/font/JosefinSans-VariableFont_wght.ttf");
+} */
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
@@ -3245,6 +3252,11 @@ fieldset:disabled .btn {
   background-color: var(--cs-color);
   box-shadow: 0 0 0 0;
   transition: all 0.5s ease-in;
+}
+
+.btn-primary-2 {
+  color: #fff;
+  background-color: var(--cs-bg-primity);
 }
 
 /* 2021/09/20 */
@@ -8415,6 +8427,10 @@ fieldset:disabled .btn {
   background-color: rgba(var(--cs-color-rgb)) !important;
 }
 
+.bg-primary-2 {
+  background-color: var(--cs-bg-primity);
+}
+
 .bg-secondary {
   --bs-bg-opacity: 1;
   background-color: rgba(
@@ -12448,7 +12464,7 @@ input[type="range"]::-webkit-slider-thumb {
   height: 20px;
   width: 20px;
   border-radius: 100%;
-  background: #fff;
+  background: var(--cs-color);
   cursor: pointer;
   margin-top: -6px;
   z-index: 9;
@@ -12761,6 +12777,37 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 /* 共用CSS - S */
+blockquote {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1em 1.5em 1em 1.5em;
+  position: relative;
+  /* line-height: 150%; */
+  letter-spacing: 0.2rem;
+  text-indent: 35px;
+}
+blockquote:before {
+  color: #fff;
+  content: "\201C";
+  font-size: 5em;
+  position: absolute;
+  left: -15px;
+  top: 40px;
+  line-height: 0.1em;
+  font-family: "Roboto", sans-serif;
+}
+blockquote:after {
+  color: #fff;
+  content: "\201D";
+  font-size: 5em;
+  position: absolute;
+  right: 15px;
+  bottom: 0em;
+  line-height: 0.1em;
+  font-family: "Roboto", sans-serif;
+}
+
 .header-page {
   background-position: center;
   background-repeat: no-repeat;
@@ -12779,7 +12826,14 @@ input[type="range"]::-moz-range-thumb {
 .page-background-dark-blue {
   background-color: #34495d;
 }
-
+.cs-bor-1 {
+  border-right: 2px solid;
+}
+.cs-title-1 {
+  font-size: 3rem;
+  color: #cfc8ba;
+  font-family: var(--cs-font-family) !important;
+}
 .text-introduction {
   font-size: 1.1rem;
   color: #6c757d;
@@ -12924,9 +12978,13 @@ input[type="range"]::-moz-range-thumb {
   margin-bottom: 20px;
   color: var(--cs-color);
 }
-
+.cs-item:hover .cs-icon-2 {
+  transform: translateY(-30%);
+  transition: all 0.3s ease 0s;
+}
 .cs-item h3 {
-  font-size: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -12994,72 +13052,6 @@ input[type="range"]::-moz-range-thumb {
   color: var(--cs-text);
   padding-left: 7px;
 }
-
-/* cs-project */
-/* .cs-project {
-  margin-bottom: 30px;
-}
-
-.cs-project > a {
-  display: block;
-  color: #000;
-  position: relative;
-  bottom: 0;
-  overflow: hidden;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-.cs-project > a:after {
-  opacity: 0;
-  visibility: hidden;
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  -webkit-box-shadow: inset 0px -34px 98px 8px rgb(0 0 0 / 75%);
-  -moz-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
-  -ms-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
-  -o-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
-  box-shadow: inset 0px -34px 98px 8px rgb(0 0 0 / 75%);
-  z-index: 8;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.cs-project > a h3,
-.cs-project > a span {
-  z-index: 12;
-  position: absolute;
-  right: 20px;
-  left: 20px;
-  bottom: 50px;
-  color: #fff;
-  margin: 0;
-  padding: 0;
-  opacity: 1;
-  font-size: 30px;
-  font-weight: 300;
-  visibility: visible;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.cs-project > a span {
-  font-size: 14px;
-  bottom: 20px;
-}
-
-.cs-project > a img {
-  position: relative;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
-  transition: 0.5s;
-} */
 
 .cs-project {
   margin-bottom: 30px;
@@ -13138,6 +13130,12 @@ input[type="range"]::-moz-range-thumb {
   opacity: 1;
   visibility: visible;
 }
+
+.cs-animation {
+  visibility: visible;
+  /* animation-delay: 0.1s; */
+}
+
 @media screen and (max-width: 992px) {
   .cs-project > a:hover:after {
     opacity: 0;
@@ -13210,6 +13208,9 @@ input[type="range"]::-moz-range-thumb {
     font-size: 3rem;
     text-shadow: #4e4d4d 0.1em 0.1em 0.2em;
     padding-top: 5rem;
+  }
+  .cs-bor-1 {
+    border-bottom: 2px solid;
   }
 }
 /* Page Public Class - E */
@@ -13757,3 +13758,45 @@ div .MdGHD01Head {
   content: "";
   background: rgba(0, 0, 0, 0.3);
 }
+
+/* Top 按鈕  - S */
+.gototop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.gototop.active {
+  opacity: 1;
+  visibility: visible;
+}
+.gototop a {
+  width: 50px;
+  height: 50px;
+  display: table;
+  /* background: rgba(202, 172, 134); */
+  background: #796554;
+
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+}
+.gototop a:hover {
+  background: rgba(186, 153, 112);
+  transition: 0.5s;
+}
+.gototop a i {
+  height: 50px;
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Top 按鈕  - E */

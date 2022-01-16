@@ -22,190 +22,6 @@ function _ShowCapstoneModel(el, type) {
 }
 /* Why Capstone Model - E 2021/11/14 */
 
-/* 選單切換 - S */
-// Menu Change
-function ChangePge(page) {
-  let count_about = 0,
-    count_course = 0;
-  let set_page = page;
-
-  /* Change Menu */
-  if (page == "home") {
-    $("nav").removeClass("navbar-shrink");
-    $("#cs_logo").attr("src", "~/../assets/img/logo_white.svg");
-    $(".language-sep").removeAttr("style");
-  } else {
-    /* Menu 變白底 */
-    // $('nav').addClass('navbar-shrink')
-    // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
-    // $('.language-sep').attr('style', 'color:#6c757d')
-  }
-
-  $("#main").empty();
-  if (page == "about") {
-    // 清空課程分頁紀錄
-    count_course = 0;
-
-    count_about++;
-
-    // 手機或平板裝置 - 點擊第二次
-    // if (count_about >= 2 && $(window).width() <= 830) {
-    //     $("#main").load("./about.html");
-    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-    //     $('#navbarResponsive').removeClass('show');
-
-    //     // 清空關於我們分頁紀錄
-    //     count_about = 0
-    // } else if ($(window).width() > 830) {
-    //     $("#main").load("./about.html");
-    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-    //     $('#navbarResponsive').removeClass('show');
-    // }
-  } else if (page == "course") {
-    // 清空關於我們分頁紀錄
-    count_about = 0;
-
-    count_course++;
-
-    // // 點擊第二次
-    // if (count_course >= 2 && $(window).width() <= 830) {
-    //     $("#main").load("./course.html");
-    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-    //     $('#navbarResponsive').removeClass('show');
-    //     // 清空課程分頁紀錄
-    //     count_course = 0
-    // } else if ($(window).width() > 830) {
-    //     $("#main").load("./course.html");
-    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-    //     $('#navbarResponsive').removeClass('show');
-    // }
-  } else {
-    // 清空紀錄
-    count_course = 0;
-    count_about = 0;
-
-    $("#navbarResponsive").removeClass("show");
-    $("#main").load("./page/" + page + ".html", function (data) {
-      _SetMainData("", set_page);
-    });
-
-    // 舊的寫法~~
-    // $("#main").load("./page/" + page + ".html");
-    // setTimeout(() => {
-    //   _SetMainData("", set_page);
-    // }, 2000);
-
-    // switch (page) {
-    //   case "home":
-    //     $("#main").load("./page/home.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "aboutus":
-    //     $("#main").load("./page/aboutus.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "staff":
-    //     $("#main").load("./page/staff.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "resource":
-    //     $("#main").load("./page/resource.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "policy":
-    //     $("#main").load("./page/policy.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "resource":
-    //     $("#main").load("./page/resource.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "gemstone":
-    //     $("#main").load("./page/gemstone.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "course-description":
-    //     $("#main").load("./page/coursedescription.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "verification-course":
-    //     $("#main").load("./page/verificationcourse.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "advisory":
-    //     $("#main").load("./page/page/advisory.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "s-feedback":
-    //     $("#main").load("./page/sfeedback.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "s-events":
-    //     $("#main").load("./page/sevents.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "admission-process":
-    //     $("#main").load("./page/admissionprocess.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "contact-us":
-    //     $("#main").load("./page/contactus.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    //   case "traffic-information":
-    //     $("#main").load("./page/trafficinformation.html");
-    //     $("#navbarResponsive").removeClass("show");
-    //     setTimeout(() => {
-    //       _SetMainData("", set_page);
-    //     }, 100);
-    //     break;
-    // }
-  }
-}
-/* 選單切換 - E */
-
 // Get URL Language 2021/10/11
 function _GetUrlLanguage() {
   let ReturnData = "en";
@@ -607,3 +423,16 @@ function GetCommunity() {
   var x = document.getElementsByTagName("script")[0];
   x.parentNode.insertBefore(s, x);
 }
+
+// Top Button
+var goToTop = function () {
+  $(".js-gotop").on("click", function (e) {
+    e.preventDefault();
+    $("html,body").animate(
+      {
+        scrollTop: 0,
+      },
+      200
+    );
+  });
+};
