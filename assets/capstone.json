@@ -14,14 +14,20 @@
       "url": "about",
       "pading": [
         {
-          "cn": "品牌故事",
-          "en": "About us",
+          "cn": "教育理念",
+          "en": "教育理念",
           "service": "aboutus",
           "url": ""
         },
         {
-          "cn": "師資陣容",
+          "cn": "優質師資",
           "en": "Meet our staff",
+          "service": "staff",
+          "url": ""
+        },
+        {
+          "cn": "環境介紹",
+          "en": "環境介紹",
           "service": "staff",
           "url": ""
         },
@@ -52,10 +58,16 @@
           "url": ""
         },
         {
-          "cn": "課綱進度",
-          "en": "課綱進度",
-          "service": "coursedescription",
+          "cn": "國際課程",
+          "en": "國際課程",
+          "service": "gemstone",
           "url": ""
+        },
+        {
+          "//_cn": "課綱進度",
+          "//_en": "課綱進度",
+          "//_service": "coursedescription",
+          "//_url": ""
         },
         {
           "cn": "檢定課程",
@@ -72,23 +84,30 @@
       ]
     },
     {
-      "cn": "學員分享",
+      "cn": "學員服務",
       "en": "Student feedback",
       "url": "",
       "pading": [
         {
-          "cn": "心得單",
-          "en": "Feedback",
+          "cn": "學生回饋",
+          "en": "學生回饋",
           "service": "sfeedback",
           "url": ""
         },
         {
           "cn": "課外活動",
-          "en": "Events",
+          "en": "課外活動",
           "service": "sevents",
           "url": ""
         }
       ]
+    },
+    {
+      "cn": "最新消息",
+      "en": "最新消息",
+      "service": "home",
+      "url": "",
+      "pading": []
     },
     {
       "cn": "更多資訊",
@@ -99,6 +118,12 @@
         {
           "cn": "如何報名",
           "en": "Admission Process",
+          "service": "admissionprocess",
+          "url": ""
+        },
+        {
+          "cn": "常見問題",
+          "en": "常見問題",
           "service": "admissionprocess",
           "url": ""
         },

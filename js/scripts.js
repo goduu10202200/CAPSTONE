@@ -11,11 +11,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
       // 更換Logo - 2021/09/19
       $("#cs_logo").attr("src", "~/../assets/img/logo_white.svg");
       $(".language-sep").removeAttr("style");
+
+      // 社群按鈕
+      $(".sc-7dvmpp-1").parent().css("margin-bottom", "0rem");
+      $(".sc-7dvmpp-1").parent().css("transition", ".7s");
+
+      // Top Button
+      $(".js-top").removeClass("active");
     } else {
       navbarCollapsible.classList.add("navbar-shrink");
       // 更換Logo - 2021/09/19
       $("#cs_logo").attr("src", "~/../assets/img/logo.svg");
       $(".language-sep").attr("style", "color:#6c757d");
+
+      // 社群按鈕
+      $(".sc-7dvmpp-1").parent().css("margin-bottom", "3.5rem");
+      $(".sc-7dvmpp-1").parent().css("transition", ".7s");
+
+      // Top Button
+      $(".js-top").addClass("active");
     }
   };
 

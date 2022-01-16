@@ -9,8 +9,10 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
     <link href="./css/simpleLightbox.min.css" rel="stylesheet" />
     <link href="./css/styles.css" rel="stylesheet" />
-    <link href="./css/animate.css" rel="stylesheet" />
-    <!-- <link href="./css/_grid-framework.scss" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    
+
     <!-- Bootstrap Icons-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
     <!-- Google fonts-->
@@ -69,7 +71,6 @@
                         <a class="nav-link language-link" href="#ln=cn" onclick="_SetMainData('cn',set_page);">中</a>
                     </li>
                     <span class="language-sep">|</span>
-
                     <li class="nav-item">
                         <a class="nav-link language-link" href="#ln=en" onclick="_SetMainData('en',set_page);">EN</a>
                     </li>
@@ -84,28 +85,14 @@
     <div id="main"></div>
     <!-- main - E 2021/10/10 -->
 
-    <!-- Community - S 2021/10/10 -->
-    <!-- <div>
-        <div id="CommunityTap" class="toTop-arrow">
-            <i class="far fa-comments fs-0 toTop-icon"></i>
-        </div>
-
-        <div class="card CommunityTap-content">
-            <div>
-                <button type="button" class="btn-close float-end Community-close" aria-label="Close"
-                    onclick="CommunityClose();"></button>
-            </div>
-            <div class="card-body">
-                <ul id="CommunityUl"></ul>
-            </div>
-        </div>
-    </div> -->
-    <!-- Community - E 2021/10/10 -->
+    <div class="gototop js-top active">
+        <a href="#" class="js-gotop"><i class="fa fa-arrow-up fa-md" aria-hidden="true"></i></a>
+    </div>
 
     <!-- Footer - S 2021/09/17 -->
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; 2021 - CAPSTONE</div>
+            <div class="small text-center text-muted">Copyright &copy; CAPSTONE</div>
         </div>
     </footer>
     <!-- Footer - E -->
@@ -128,8 +115,8 @@
     <script type="text/javascript" src="./js/capstone.js"></script>
 
     <script>
+        let set_page = "home";
         $(function () {
-
 
             $("#main").load("./page/home.html");
 
@@ -148,16 +135,94 @@
 
             // Commuinty Button
             GetCommunity()
+
+            // Top Button
+            goToTop();
+
+            new WOW().init();
         })
 
         $(window).on('load', function () {
             setTimeout(() => {
                 // 隱藏社群按鈕文字
                 $(".sc-7dvmpp-1").css("display", "none");
+
             }, 1000);
             // Include JS Files
             $.getScript("./js/scrollbar.js")
+
+            
         });
+
+    
+        /* 選單切換 - S */
+            function ChangePge(page) {
+                let count_about = 0,
+                    count_course = 0;
+                set_page = page
+                /* Change Menu */
+                if (page == "home") {
+                    $("nav").removeClass("navbar-shrink");
+                    $("#cs_logo").attr("src", "~/../assets/img/logo_white.svg");
+                    $(".language-sep").removeAttr("style");
+                } else {
+                    /* Menu 變白底 */
+                    // $('nav').addClass('navbar-shrink')
+                    // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
+                    // $('.language-sep').attr('style', 'color:#6c757d')
+                }
+
+                $("#main").empty();
+                if (page == "about") {
+                    // 清空課程分頁紀錄
+                    count_course = 0;
+
+                    count_about++;
+
+                    // 手機或平板裝置 - 點擊第二次
+                    // if (count_about >= 2 && $(window).width() <= 830) {
+                    //     $("#main").load("./about.html");
+                    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
+                    //     $('#navbarResponsive').removeClass('show');
+
+                    //     // 清空關於我們分頁紀錄
+                    //     count_about = 0
+                    // } else if ($(window).width() > 830) {
+                    //     $("#main").load("./about.html");
+                    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
+                    //     $('#navbarResponsive').removeClass('show');
+                    // }
+                } else if (page == "course") {
+                    // 清空關於我們分頁紀錄
+                    count_about = 0;
+
+                    count_course++;
+
+                    // // 點擊第二次
+                    // if (count_course >= 2 && $(window).width() <= 830) {
+                    //     $("#main").load("./course.html");
+                    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
+                    //     $('#navbarResponsive').removeClass('show');
+                    //     // 清空課程分頁紀錄
+                    //     count_course = 0
+                    // } else if ($(window).width() > 830) {
+                    //     $("#main").load("./course.html");
+                    //     setTimeout(() => { _SetMainData('', set_page); }, 100);
+                    //     $('#navbarResponsive').removeClass('show');
+                    // }
+                } else {
+                    // 清空紀錄
+                    count_course = 0;
+                    count_about = 0;
+
+                    $("#navbarResponsive").removeClass("show");
+                    $("#main").load("./page/" + page + ".html", function (data) {
+                        _SetMainData("", set_page);
+                    });
+                }
+            }
+            /* 選單切換 - E */
+            
         /* Commuinty Tab - S 2021/12/26 */
 
 
