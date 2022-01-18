@@ -61,7 +61,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
-  --cs-btn-primary:#CFC8BA;
+  --cs-btn-primary: #cfc8ba;
   --cs-color: #b59e61;
   --cs-text: #d8b853;
   --cs-bg-primity: #bea973;
@@ -12779,6 +12779,10 @@ input[type="range"]::-moz-range-thumb {
   }
 }
 /* 共用CSS - S */
+.m-lt-10 {
+  margin-left: 5%;
+  margin-top: 10%;
+}
 blockquote {
   color: #fff;
   font-size: 1.5rem;
@@ -13188,6 +13192,39 @@ blockquote:after {
 }
 
 @media (max-width: 430px) {
+  .m-lt-10 {
+    margin-left: 0;
+    margin-top: 0;
+  }
+  blockquote {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.5em 2em 0.5em 1em;
+    position: relative;
+    letter-spacing: 0.2rem;
+    text-indent: 35px;
+  }
+  blockquote:before {
+    color: #fff;
+    content: "\201C";
+    font-size: 3em;
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    line-height: 0.1em;
+    font-family: "Roboto", sans-serif;
+  }
+  blockquote:after {
+    color: #fff;
+    content: "\201D";
+    font-size: 3em;
+    position: absolute;
+    right: 15px;
+    bottom: -0.5em;
+    line-height: 0.1em;
+    font-family: "Roboto", sans-serif;
+  }
   .text-introduction {
     font-size: 0.5rem;
   }
