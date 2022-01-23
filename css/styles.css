@@ -3261,6 +3261,18 @@ fieldset:disabled .btn {
   background-color: var(--cs-bg-primity);
 }
 
+.btn-primary-3 {
+  color: #cfc8ba;
+  font-size: 1rem;
+  line-height: 2rem;
+  border-bottom: 1px solid var(--cs-color);
+  transition: all 0.4s ease-out;
+}
+.btn-primary-3:hover {
+  padding-right: 2%;
+  transition: padding-right 0.6s ease-in;
+}
+
 /* 2021/09/20 */
 .btn-submit {
   width: 25%;

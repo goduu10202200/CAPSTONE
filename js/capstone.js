@@ -399,6 +399,9 @@ function AdmissionProcess_Language(lan) {}
 function Contactus_Language(lan) {}
 function TrafficInformation_Language(lan) {}
 
+// 換頁面
+function ToAboutUs() {}
+
 //社群按鈕
 function GetCommunity() {
   var options = {
