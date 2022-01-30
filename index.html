@@ -142,15 +142,20 @@
             new WOW().init();
         })
 
-        $(window).on('load', function () {
+
+        window.onload = function () {
             setTimeout(() => {
                 // 隱藏社群按鈕文字
                 // $(".sc-7dvmpp-1").css("display", "none !important");
                 $(".sc-7dvmpp-1").hide();
 
-            }, 2000);
+            }, 1000);
             // Include JS Files
             $.getScript("./js/scrollbar.js")
+        }
+
+        $(window).on('load', function () {
+
 
 
         });
