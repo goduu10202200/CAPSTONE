@@ -92,7 +92,7 @@
     <!-- Footer - S 2021/09/17 -->
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">Copyright &copy; CAPSTONE</div>
+            <div class="small text-center text-muted">Copyright &copy; - CAPSTONE</div>
         </div>
     </footer>
     <!-- Footer - E -->
@@ -145,9 +145,9 @@
         $(window).on('load', function () {
             setTimeout(() => {
                 // 隱藏社群按鈕文字
-                $(".sc-7dvmpp-1").css("display", "none");
+                $(".sc-7dvmpp-1").css("display", "none !important");
 
-            }, 1000);
+            }, 2000);
             // Include JS Files
             $.getScript("./js/scrollbar.js")
 
