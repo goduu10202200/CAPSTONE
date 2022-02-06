@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelectorAll("#navbarResponsive .nav-link")
   );
   responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener("click", () => {
+    responsiveNavItem.addEventListener("click", () => {    
       if (window.getComputedStyle(navbarToggler).display !== "none") {
         navbarToggler.click();
       }

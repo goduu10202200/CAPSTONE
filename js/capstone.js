@@ -24,18 +24,19 @@ function _ShowCapstoneModel(el, type) {
 
 // Get URL Language 2021/10/11
 function _GetUrlLanguage() {
-  let ReturnData = "en";
-  let LanguageSplit = location.href.split("#");
-  if (LanguageSplit.length > 1) {
-    switch (LanguageSplit[1]) {
-      case "ln=cn":
-        ReturnData = "cn";
-        break;
-      case "ln=en":
-        ReturnData = "en";
-        break;
-    }
-  }
+  let ReturnData = "cn";
+  // 測試階段 -> 預設中文
+  // let LanguageSplit = location.href.split("#");
+  // if (LanguageSplit.length > 1) {
+  //   switch (LanguageSplit[1]) {
+  //     case "ln=cn":
+  //       ReturnData = "cn";
+  //       break;
+  //     case "ln=en":
+  //       ReturnData = "en";
+  //       break;
+  //   }
+  // }
   return ReturnData;
 }
 
@@ -243,7 +244,7 @@ function Menu_Language(lan) {
   $.each(dataMenu, function (index, val) {
     $("#menu").append(function () {
       let returnpage;
-      if (val["pading"].length > 0) {
+      if (val["pading"].length > 0 && val["url"] == "") {
         returnpage = $("<li>")
           .addClass("nav-item dropdown")
           .append(
@@ -269,6 +270,49 @@ function Menu_Language(lan) {
                         .attr(
                           "onclick",
                           "ChangePge('" + val_pading["service"] + "')"
+                        )
+                        .append(val_pading[lan])
+                    )
+                  );
+                });
+                return li_pading;
+              })
+          );
+      } else if (val["pading"].length > 0 && val["url"] != "") {
+        returnpage = $("<li>")
+          .addClass("nav-item dropdown")
+          .append(
+            $("<a>")
+              .addClass("nav-link dropdown-toggle")
+              .attr(
+                "onclick",
+                "ChangePge('" + val["service"] + "','" + val["url"] + "')"
+              )
+              // .attr("href", val["url"])
+              .attr("id", val["service"])
+              .attr("data-bs-toggle", "dropdown")
+              .attr("aria-expanded", "false")
+              .append(val[lan])
+          )
+          .append(
+            $("<ul>")
+              .addClass("dropdown-menu")
+              .attr("aria-labelledby", val["service"])
+              .append(function () {
+                let li_pading = [];
+                $.each(val["pading"], function (index_pading, val_pading) {
+                  li_pading.push(
+                    $("<li>").append(
+                      $("<a>")
+                        .addClass("dropdown-item dropdown-item-link nav-link")
+                        // .attr("href", val_pading["url"])
+                        .attr(
+                          "onclick",
+                          "ChangePge('" +
+                            val_pading["service"] +
+                            "','" +
+                            val_pading["url"] +
+                            "')"
                         )
                         .append(val_pading[lan])
                     )
@@ -329,7 +373,7 @@ function Aboutus_Language(lan) {
   // Set Header
   $("#header_aboutus").css(
     "background-image",
-    'url("~/../assets/img/page_header/about.jpg")'
+    'url("~/../assets/img/page_header/background1.jpg")'
   );
 
   $.each(dataMenu, function (index, val) {

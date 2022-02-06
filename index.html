@@ -9,9 +9,15 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
     <link href="./css/simpleLightbox.min.css" rel="stylesheet" />
     <link href="./css/styles.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <!-- <link href="./css/swiper.min.css" rel="stylesheet" /> -->
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <!-- swiper -->
 
     <!-- Bootstrap Icons-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" /> -->
@@ -21,6 +27,11 @@
             rel="stylesheet" type="text/css" /> -->
     <!-- SimpleLightbox plugin CSS-->
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <style>
+
+    </style>
+
 </head>
 
 <body id="page-top">
@@ -116,12 +127,14 @@
 
     <script>
         let set_page = "home";
+        let count_about = 0,
+            count_course = 0;
         $(function () {
 
-            $("#main").load("./page/home.html");
+            $("#main").load("./page/aboutus.html");
 
             // 預設語言 Language
-            setTimeout(() => { _SetMainData('cn', 'home'); }, 100);
+            setTimeout(() => { _SetMainData('cn', 'aboutus'); }, 100);
 
             // 測試用
             // $("#main").load("./page/coursedescription.html");
@@ -140,6 +153,8 @@
             goToTop();
 
             new WOW().init();
+
+
         })
 
 
@@ -152,30 +167,114 @@
             }, 5000);
             // Include JS Files
             $.getScript("./js/scrollbar.js")
+
+
+            // var swiper = new Swiper(".mySwiper", {
+            //     pagination: {
+            //         el: ".swiper-pagination",
+            //         clickable: true,
+            //         renderBullet: function (index, className) {
+            //             return '<span class="' + className + '">' + (index + 1) + "</span>";
+            //         },
+            //     },
+            // });
+
+            let SwiperEnvironmentContent =
+                '<div class="row gx-4 gx-lg-5 justify-content-center buil01-template-03"> ' +
+                '<div class="col-md-2"> ' +
+                '<div class="title-area fadeUp text-white" style="opacity: 1;transform: matrix(1, 0, 0, 1, 0, 0);"> ' +
+                '<h3 class="title"> ' +
+                '<span class="span-en">Environment Inyroduction</span> ' +
+                '<span>介紹</span> ' +
+                '<strong>環境</strong> ' +
+                '</h3> ' +
+                '</div> ' +
+                '</div> ' +
+                '<div class="col-md-5"></div> ' +
+                '<div class="col-md-5 py-2 text-center"> ' +
+                '<div class="container h-100 w-100"> ' +
+                '<div class="d-flex min-vh-50 text-center align-items-center" style = "border: #989898 1px solid;background-color: #fff;opacity: 0.6;"> ' +
+                '<div class="w-100"> ' +
+                '<div class="py-5 text-dark" style = "padding-top: 20% !important;padding-bottom: 20% !important;"> ' +
+                '<h2>提供您，優質的環境</h2> ' +
+                '<h2>是我們的責任</h2> ' +
+                '<hr class="divider" /> ' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
+                '</div >'
+
+            var ListSwiperEnvironment = [1, 2, 3, 4, 5, 6, 7, 8];
+            $.each(ListSwiperEnvironment, function (index, val) {
+                console.log('val=', val);
+                $("#swiper-environment").append('<div class="swiper-slide parallax-bg" style="background-image: url(~/../assets/img/page/about/environment/' + val + '.jpg);">' +
+                    SwiperEnvironmentContent +
+                    '</div>')
+                if (val === index + 1) {
+                    var swiper = new Swiper(".mySwiper", {
+                        cssMode: true,
+                        navigation: {
+                            nextEl: ".swiper-button-next",
+                            prevEl: ".swiper-button-prev",
+                        },
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                        },
+                        mousewheel: true,
+                        keyboard: true,
+                    });
+                }
+            });
+            swiperInstance = new Swiper('.history .swiper-container', {
+                // pagination: {
+                //     el: '.history .swiper-pagination',
+                //     type: 'bullets',
+                //     clickable: true
+                // },
+
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                    // type: "progressbar",
+                }
+                ,
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                //  autoplay: true,
+
+                breakpoints: {
+                    320: { // screen >= 320px
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    768: { // screen >= 768px
+                        slidesPerView: 2,
+                        spaceBetween: 20
+                    },
+                    1600: { // screen >= 1280px
+                        slidesPerView: 2,
+                        spaceBetween: 0
+                    }
+                },
+                slidesPerView: 2.1,
+                speed: 800
+            });
+
+
+
+
+            $(".scroll-down").on('click', function () {
+                $('html,body').animate({ scrollTop: $(".banner").height() }, 1000);
+            });
         }
 
-        // $(document).ready(function () {
-        //     setTimeout(() => {
-        //         // 隱藏社群按鈕文字
-        //         $(".sc-7dvmpp-1").css("display", "none");
-        //         $(".sc-7dvmpp-1").hide();
-
-        //     }, 5000);
-        // });
-
-
-        $(window).on('load', function () {
-
-
-
-        });
-
-
         /* 選單切換 - S */
-        function ChangePge(page) {
-            let count_about = 0,
-                count_course = 0;
-            set_page = page
+        function ChangePge(page, href) {
             /* Change Menu */
             if (page == "home") {
                 $("nav").removeClass("navbar-shrink");
@@ -188,52 +287,49 @@
                 // $('.language-sep').attr('style', 'color:#6c757d')
             }
 
-            $("#main").empty();
-            if (page == "about") {
-                // 清空課程分頁紀錄
-                count_course = 0;
 
+            if (page == "aboutus") {
                 count_about++;
 
-                // 手機或平板裝置 - 點擊第二次
-                // if (count_about >= 2 && $(window).width() <= 830) {
-                //     $("#main").load("./about.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
+                //手機或平板裝置 - 點擊第二次
+                if (count_about >= 2 && $(window).width() <= 830) {
+                    $("#navbarResponsive").removeClass("show");
+                    $("#main").load("./page/" + page + ".html", function (data) {
+                        _SetMainData("", page);
+                    });
+                    // 清空關於我們分頁紀錄
+                    count_about = 0
+                } else if ($(window).width() > 830) {
+                    $("#navbarResponsive").removeClass("show");
+                    $("#main").load("./page/" + page + ".html", function (data) {
+                        _SetMainData("", page);
+                    });
 
-                //     // 清空關於我們分頁紀錄
-                //     count_about = 0
-                // } else if ($(window).width() > 830) {
-                //     $("#main").load("./about.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-                // }
-            } else if (page == "course") {
-                // 清空關於我們分頁紀錄
-                count_about = 0;
+                    $('html,body').animate({
+                        scrollTop: 0
+                    }, 800)
+                }
 
-                count_course++;
+                if (page != href) {
+                    // 點選子項目
+                    event.preventDefault();
+                    setTimeout(() => {
+                        const hash = '#' + href;
+                        $('html,body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800)
+                    }, 500);
+                }
 
-                // // 點擊第二次
-                // if (count_course >= 2 && $(window).width() <= 830) {
-                //     $("#main").load("./course.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-                //     // 清空課程分頁紀錄
-                //     count_course = 0
-                // } else if ($(window).width() > 830) {
-                //     $("#main").load("./course.html");
-                //     setTimeout(() => { _SetMainData('', set_page); }, 100);
-                //     $('#navbarResponsive').removeClass('show');
-                // }
             } else {
+                $("#main").empty();
                 // 清空紀錄
                 count_course = 0;
                 count_about = 0;
 
                 $("#navbarResponsive").removeClass("show");
                 $("#main").load("./page/" + page + ".html", function (data) {
-                    _SetMainData("", set_page);
+                    _SetMainData("", page);
                 });
             }
         }
