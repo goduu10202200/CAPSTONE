@@ -131,10 +131,10 @@
             count_course = 0;
         $(function () {
 
-            $("#main").load("./page/sevents.html");
+            $("#main").load("./page/" + set_page + ".html");
 
             // 預設語言 Language
-            setTimeout(() => { _SetMainData('cn', 'sevents'); }, 100);
+            setTimeout(() => { _SetMainData('cn', set_page); }, 100);
 
             // 測試用
             // $("#main").load("./page/coursedescription.html");
@@ -207,7 +207,7 @@
 
             var ListSwiperEnvironment = [1, 2, 3, 4, 5, 6, 7, 8];
             $.each(ListSwiperEnvironment, function (index, val) {
-                console.log('val=', val);
+                // console.log('val=', val);
                 $("#swiper-environment").append('<div class="swiper-slide parallax-bg" style="background-image: url(~/../assets/img/page/about/environment/' + val + '.jpg);">' +
                     SwiperEnvironmentContent +
                     '</div>')
@@ -227,34 +227,7 @@
                     });
                 }
             });
-            swiperInstance = new Swiper('.history .swiper-container', {
-                pagination: {
-                    el: '.history .swiper-pagination',
-                    clickable: true
-                }
-                ,
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                breakpoints: {
-                    320: { // screen >= 320px
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    768: { // screen >= 768px
-                        slidesPerView: 2,
-                        spaceBetween: 20
-                    },
-                    1600: { // screen >= 1280px
-                        slidesPerView: 2.5,
-                        spaceBetween: 2
-                    }
-                },
-                slidesPerView: 2.1,
-                speed: 800,
-                // loop: true
-            });
+
 
 
 
@@ -321,6 +294,38 @@
                 $("#navbarResponsive").removeClass("show");
                 $("#main").load("./page/" + page + ".html", function (data) {
                     _SetMainData("", page);
+                    if (page == "sevents") {
+                        swiperInstance = new Swiper(".history .swiper-container", {
+                            pagination: {
+                                el: ".history .swiper-pagination",
+                                clickable: true,
+                            },
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                            },
+                            breakpoints: {
+                                320: {
+                                    // screen >= 320px
+                                    slidesPerView: 1,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    // screen >= 768px
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                1600: {
+                                    // screen >= 1280px
+                                    slidesPerView: 2.5,
+                                    spaceBetween: 2,
+                                },
+                            },
+                            slidesPerView: 2.1,
+                            speed: 800,
+                            // loop: true
+                        });
+                    }
                 });
             }
         }

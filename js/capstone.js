@@ -165,7 +165,7 @@ function _EnData(page) {
     case "s-feedback":
       Sfeedback_Language("en");
       break;
-    case "s-events":
+    case "sevents":
       Sevents_Language("en");
       break;
     case "admission-process":
@@ -220,7 +220,7 @@ function _CnData(page) {
     case "s-feedback":
       Sfeedback_Language("cn");
       break;
-    case "s-events":
+    case "sevents":
       Sevents_Language("cn");
       break;
     case "admission-process":
@@ -438,7 +438,8 @@ function Advisory_Language(lan) {
   // });
 }
 function Sfeedback_Language(lan) {}
-function Sevents_Language(lan) {}
+function Sevents_Language(lan) {
+}
 function AdmissionProcess_Language(lan) {}
 function Contactus_Language(lan) {}
 function TrafficInformation_Language(lan) {
@@ -451,9 +452,6 @@ function TrafficInformation_Language(lan) {
     'url("~/../assets/img/page_header/background1.jpg")'
   );
 }
-
-// 換頁面
-function ToAboutUs() {}
 
 //社群按鈕
 function GetCommunity() {
