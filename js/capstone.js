@@ -174,7 +174,7 @@ function _EnData(page) {
     case "contact-us":
       Contactus_Language("en");
       break;
-    case "traffic-information":
+    case "trafficinformation":
       TrafficInformation_Language("en");
       break;
   }
@@ -229,7 +229,7 @@ function _CnData(page) {
     case "contact-us":
       Contactus_Language("cn");
       break;
-    case "traffic-information":
+    case "trafficinformation":
       TrafficInformation_Language("cn");
       break;
   }
@@ -441,7 +441,16 @@ function Sfeedback_Language(lan) {}
 function Sevents_Language(lan) {}
 function AdmissionProcess_Language(lan) {}
 function Contactus_Language(lan) {}
-function TrafficInformation_Language(lan) {}
+function TrafficInformation_Language(lan) {
+  let dataMenu = _GetMenu();
+  // Clear item
+  $("#header_trafficinformation").empty();
+  // Set Header
+  $("#header_trafficinformation").css(
+    "background-image",
+    'url("~/../assets/img/page_header/background1.jpg")'
+  );
+}
 
 // 換頁面
 function ToAboutUs() {}

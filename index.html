@@ -131,10 +131,10 @@
             count_course = 0;
         $(function () {
 
-            $("#main").load("./page/aboutus.html");
+            $("#main").load("./page/sevents.html");
 
             // 預設語言 Language
-            setTimeout(() => { _SetMainData('cn', 'aboutus'); }, 100);
+            setTimeout(() => { _SetMainData('cn', 'sevents'); }, 100);
 
             // 測試用
             // $("#main").load("./page/coursedescription.html");
@@ -153,7 +153,6 @@
             goToTop();
 
             new WOW().init();
-
 
         })
 
@@ -229,24 +228,15 @@
                 }
             });
             swiperInstance = new Swiper('.history .swiper-container', {
-                // pagination: {
-                //     el: '.history .swiper-pagination',
-                //     type: 'bullets',
-                //     clickable: true
-                // },
-
                 pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                    // type: "progressbar",
+                    el: '.history .swiper-pagination',
+                    clickable: true
                 }
                 ,
                 navigation: {
                     nextEl: ".swiper-button-next",
                     prevEl: ".swiper-button-prev",
                 },
-                //  autoplay: true,
-
                 breakpoints: {
                     320: { // screen >= 320px
                         slidesPerView: 1,
@@ -257,12 +247,13 @@
                         spaceBetween: 20
                     },
                     1600: { // screen >= 1280px
-                        slidesPerView: 2,
-                        spaceBetween: 0
+                        slidesPerView: 2.5,
+                        spaceBetween: 2
                     }
                 },
                 slidesPerView: 2.1,
-                speed: 800
+                speed: 800,
+                // loop: true
             });
 
 
