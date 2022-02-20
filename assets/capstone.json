@@ -117,14 +117,14 @@
       "pading": [
         {
           "cn": "如何報名",
-          "en": "Admission Process",
-          "service": "admissionprocess",
+          "en": "SIGN UP",
+          "service": "signup",
           "url": ""
         },
         {
           "cn": "常見問題",
           "en": "常見問題",
-          "service": "admissionprocess",
+          "service": "question",
           "url": ""
         },
         {

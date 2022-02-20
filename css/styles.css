@@ -13540,6 +13540,9 @@ blockquote:after {
 .cs-icon-3 {
   color: var(--cs-bg-primity);
 }
+.cs-icon-4 {
+  color: #fff;
+}
 
 .cs-item:hover .cs-icon {
   border: 3px solid var(--cs-color);
@@ -13868,7 +13871,7 @@ blockquote:after {
 
 @media screen and (min-width: 1024px) {
   .div-flex {
-    margin-left: 90%;
+    margin-left: 85%;
   }
 }
 
@@ -14375,6 +14378,22 @@ div .MdGHD01Head {
   }
 }
 /* Staff 2021/10/24  - E */
+
+/* 聯繫我們 - S*/
+
+.cs-forms-input{
+  border: 0px;
+  border-bottom: 1px solid #D9D9D9;
+}
+
+.contact-span{
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+}
+
+/* 聯繫我們 - E*/
+
 
 /* Advisory */
 .step-div {
