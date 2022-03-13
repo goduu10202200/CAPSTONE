@@ -119,8 +119,6 @@
     <!-- fontawesome JS -->
     <script type="text/javascript" src="./js/fontawesome.js"></script>
 
-    <!-- <script src="https://www.instagram.com/embed.js"></script> -->
-
     <!-- Core theme JS -->
     <script type="text/javascript" src="./js/scripts.js"></script>
     <script type="text/javascript" src="./js/capstone.js"></script>
@@ -295,9 +293,9 @@
                 $("#main").load("./page/" + page + ".html", function (data) {
                     _SetMainData("", page);
                     if (page == "sevents") {
-                        swiperInstance = new Swiper(".history .swiper-container", {
+                        swiperInstance = new Swiper(".events .swiper-container", {
                             pagination: {
-                                el: ".history .swiper-pagination",
+                                el: ".events .swiper-pagination",
                                 clickable: true,
                             },
                             navigation: {
