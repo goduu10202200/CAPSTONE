@@ -67,6 +67,7 @@
   --cs-text: #d8b853;
   --cs-bg-primity: #bea973;
   --cs-bg-primity-2: #cfc8ba;
+  --cs-dark: #363636;
   --cs-color-rgb: 181, 158, 97;
 }
 
@@ -12971,8 +12972,16 @@ blockquote:after {
   font-weight: 500;
   letter-spacing: 0.1rem;
 }
+.text-introduction-blockquote  {
+  font-size: 3em;
+  line-height: 0.1em;
+  font-family: "Roboto", sans-serif;
+}
 .CS-txt-red {
   color: #d51f12;
+}
+.cs-txt-dark {
+  color: var(--cs-dark);
 }
 /* Banner 文字 */
 .banner-section {
@@ -13633,7 +13642,7 @@ blockquote:after {
   color: var(--cs-bg-primity-2);
 }
 .cs-item h3 {
-  color: #363636;
+  color: var(--cs-dark);
   font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -13983,7 +13992,7 @@ blockquote:after {
     content: "";
     /* display: block; */
     border-right: 1px solid var(--cs-bg-primity);
-    height: 50vh;
+    height: 40vh;
     position: absolute;
     left: 55%;
     top: 120%;
@@ -14337,6 +14346,15 @@ div .MdGHD01Head {
 }
 
 /* Home 2021/10/31 - E */
+
+/* About Us 2022/03/19 - S*/
+.span-founder {
+  color: var(--cs-dark);
+  font-size: 1.8rem;
+  display: block;
+}
+
+/* About Us 2022/03/19 - E*/
 
 /* MAP 2021/10/23  - S */
 .hide-google-map {
