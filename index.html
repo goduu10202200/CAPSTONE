@@ -113,7 +113,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
-        let set_page = "home";
+        let set_page = "contactus";
         let count_about = 0,
             count_course = 0;
         $(function () {
@@ -230,18 +230,51 @@
 
         /* 聯繫我們 - 寄信 - S */
         function SendMail() {
-            let txtName = $('#txtName').val();
-            let txtPhone = $('#txtPhone').val();
-            let txtEmail = $('#txtEmail').val();
+            let txtName = $('#txtName').val();                                          // 姓名
+            let txtPhone = $('#txtPhone').val();                                        // 聯絡電話
+            let txtEmail = $('#txtEmail').val();                                        // Email
+            let txtSchool = $('#txtSchool').val();                                      // 學校
+            let ddlGrade = $('#ddlGrade').find("option:selected").text();               // 年級    
+            let ddlGemstone = $('#ddlGemstone').find("option:selected").text();         // Project Gemstone
+            let ddlInterCourse = $('#ddlInterCourse').find("option:selected").text();   // 國際課程    
+            let ddlExamCourse = $('#ddlExamCourse').find("option:selected").text();     // 檢定課程
+            let ddlStudy = $('#ddlGrade').find("option:selected").text();               // 留學代辦
+            let ddlTime = $('#ddlTime').find("option:selected").text();                 // 方便連絡時段
+            let txtOther = $('#txtOther').val();                                        // 其他
+            let msg = "";
+
+
             let VerifyData = CheckMail(txtName, txtPhone, txtEmail);
 
             if (VerifyData.length != 0) {
                 alert(VerifyData);
             } else {
+                msg = "姓名：" + txtName + "<br>" +
+                    "聯絡電話：" + txtPhone + "<br>" +
+                    "Email：" + txtEmail + "<br>" +
+                    "學校：" + txtSchool + "<br>" +
+                    "年級：" + ddlGrade + "<br>" +
+                    "Project Gemstone：" + ddlGemstone + "<br>" +
+                    "國際課程：" + ddlInterCourse + "<br>" +
+                    "檢定課程：" + ddlExamCourse + "<br>" +
+                    "留學代辦：" + ddlStudy + "<br>" +
+                    "方便連絡時段：" + ddlTime + "<br>" +
+                    "其他：" + txtOther + "<br>"
+               
                 emailjs.send("service_valour", "template_ksnrp2s", {
-                    from_name: "VALOUR",
-                    to_name: txtName,
-                    message: txtPhone,
+                    from_name: txtName,
+                    to_name: "VALOUR",
+                    txtName: txtName,
+                    txtPhone: txtPhone,
+                    txtEmail: txtEmail,
+                    txtSchool: txtSchool,
+                    ddlGrade: ddlGrade,
+                    ddlGemstone: ddlGemstone,
+                    ddlInterCourse: ddlInterCourse,
+                    ddlExamCourse: ddlExamCourse,
+                    ddlStudy: ddlStudy,
+                    ddlTime: ddlTime,
+                    txtOther: txtOther,
                 });
                 alert('寄信成功')
             }
