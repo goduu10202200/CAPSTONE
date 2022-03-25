@@ -113,7 +113,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <script>
-        let set_page = "contactus";
+        let set_page = "home";
         let count_about = 0,
             count_course = 0;
         $(function () {
@@ -260,7 +260,7 @@
                     "留學代辦：" + ddlStudy + "<br>" +
                     "方便連絡時段：" + ddlTime + "<br>" +
                     "其他：" + txtOther + "<br>"
-               
+
                 emailjs.send("service_valour", "template_ksnrp2s", {
                     from_name: txtName,
                     to_name: "VALOUR",
@@ -277,6 +277,11 @@
                     txtOther: txtOther,
                 });
                 alert('寄信成功')
+                window.location.reload();
+                $("#main").load("./page/contactus.html");
+                // 預設語言 Language
+                setTimeout(() => { _SetMainData('cn', 'contactus'); }, 100);
+
             }
         }
         function CheckMail(txtName, txtPhone, txtEmail) {
