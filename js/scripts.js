@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     if (window.scrollY === 0) {
       navbarCollapsible.classList.remove("navbar-shrink");
       // 更換Logo - 2021/09/19
-      $("#cs_logo").attr("src", "~/../assets/img/logo_white.svg");
+      $("#cs_logo").attr("src", "~/../assets/img/logo_white.png");
       $(".language-sep").removeAttr("style");
 
       // 社群按鈕
@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     } else {
       navbarCollapsible.classList.add("navbar-shrink");
       // 更換Logo - 2021/09/19
-      $("#cs_logo").attr("src", "~/../assets/img/logo.svg");
+      $("#cs_logo").attr("src", "~/../assets/img/logo_gold.png");
       $(".language-sep").attr("style", "color:#6c757d");
 
       // 社群按鈕
@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     document.querySelectorAll("#navbarResponsive .nav-link")
   );
   responsiveNavItems.map(function (responsiveNavItem) {
-    responsiveNavItem.addEventListener("click", () => {    
+    responsiveNavItem.addEventListener("click", () => {
       if (window.getComputedStyle(navbarToggler).display !== "none") {
         navbarToggler.click();
       }

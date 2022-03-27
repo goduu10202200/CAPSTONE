@@ -84,6 +84,24 @@ function _GetMenu() {
   return dataMenu;
 }
 
+function _GetBanner(type) {
+  let dataBanner;
+  $.ajax({
+    type: "POST",
+    url: "./assets/capstone.json",
+    async: false,
+    success: function (data) {
+      $.each(data["banner"], function (index, val) {
+        if (val["service"] == type) {
+          dataBanner = val["url"];
+          return false;
+        }
+      });
+    },
+  });
+  return dataBanner;
+}
+
 function _GetContent(page) {
   let dataContent;
   $.ajax({
@@ -171,7 +189,14 @@ function _EnData(page) {
     case "admission-process":
       AdmissionProcess_Language("en");
       break;
-    case "contact-us":
+    /* 更多資訊 */
+    case "signup":
+      Signup_Language("en");
+      break;
+    case "question":
+      Question_Language("en");
+      break;
+    case "contactus":
       Contactus_Language("en");
       break;
     case "trafficinformation":
@@ -226,11 +251,18 @@ function _CnData(page) {
     case "admission-process":
       AdmissionProcess_Language("cn");
       break;
-    case "contact-us":
-      Contactus_Language("cn");
+    /* 更多資訊 */
+    case "signup":
+      Signup_Language("en");
+      break;
+    case "question":
+      Question_Language("en");
+      break;
+    case "contactus":
+      Contactus_Language("en");
       break;
     case "trafficinformation":
-      TrafficInformation_Language("cn");
+      TrafficInformation_Language("en");
       break;
   }
 }
@@ -367,16 +399,16 @@ function About_Language(lan) {
 
 function Aboutus_Language(lan) {
   let dataMenu = _GetMenu();
+  let dataBanner = _GetBanner("aboutus");
+  console.log(dataBanner);
   // Clear item
   $("#AboutTitle").empty();
   $("#header_aboutus").empty();
   // Set Header
-  $("#header_aboutus").css(
-    "background-image",
-    'url("~/../assets/img/page_header/background1.jpg")'
-  );
+  $("#header_aboutus").css("background-image", 'url("' + dataBanner + '")');
 
   $.each(dataMenu, function (index, val) {
+    console.log(dataMenu);
     if (index == 1) {
       $("#AboutTitle").text(val["pading"][0][lan]);
     }
@@ -438,18 +470,42 @@ function Advisory_Language(lan) {
   // });
 }
 function Sfeedback_Language(lan) {}
-function Sevents_Language(lan) {
-}
+function Sevents_Language(lan) {}
 function AdmissionProcess_Language(lan) {}
-function Contactus_Language(lan) {}
+/* 更多資訊 */
+function Signup_Language(lan) {
+  let dataBanner = _GetBanner("signup");
+  // Clear item
+  $("#header_aboutus").empty();
+
+  // Set Header
+  $("#header_signup").css("background-image", 'url("' + dataBanner + '")');
+}
+function Question_Language(lan) {
+  let dataBanner = _GetBanner("question");
+  // Clear item
+  $("#header_question").empty();
+
+  // Set Header
+  $("#header_question").css("background-image", 'url("' + dataBanner + '")');
+}
+function Contactus_Language(lan) {
+  let dataBanner = _GetBanner("contactus");
+  // Clear item
+  $("#header_contactus").empty();
+
+  // Set Header
+  $("#header_contactus").css("background-image", 'url("' + dataBanner + '")');
+}
 function TrafficInformation_Language(lan) {
-  let dataMenu = _GetMenu();
+  let dataBanner = _GetBanner("trafficInformation");
   // Clear item
   $("#header_trafficinformation").empty();
+
   // Set Header
   $("#header_trafficinformation").css(
     "background-image",
-    'url("~/../assets/img/page_header/background1.jpg")'
+    'url("' + dataBanner + '")'
   );
 }
 

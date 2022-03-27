@@ -720,7 +720,7 @@ progress {
 @media (min-width: 780px) and (max-width: 1370px) {
   /* iPad Pro */
   .img-small {
-    max-width: 15%;
+    max-width: 13%;
     height: auto;
   }
 }
@@ -3287,6 +3287,11 @@ fieldset:disabled .btn {
   line-height: 2rem;
   border-bottom: 1px solid var(--cs-color);
   transition: all 0.4s ease-out;
+}
+.btn-primary-5 {
+  color: #212529;
+  font-size: 1rem;
+  background-color: var(--cs-bg-primity);
 }
 
 /* 2021/09/20 */
@@ -8132,17 +8137,6 @@ fieldset:disabled .btn {
   padding-bottom: 3rem !important;
 }
 
-@media (max-width: 896px) {
-  .py-3 {
-    padding-top: 2.5rem !important;
-  }
-}
-@media (max-width: 430px) {
-  .mb-4 {
-    margin-bottom: 1rem !important;
-  }
-}
-
 .pt-0 {
   padding-top: 0 !important;
 }
@@ -8239,6 +8233,22 @@ fieldset:disabled .btn {
 }
 .ps-5 {
   padding-left: 3rem !important;
+}
+
+@media (min-width: 375px) {
+  .py-3 {
+    padding-top: 1.5rem !important;
+  }
+}
+@media (max-width: 430px) {
+  .mb-4 {
+    margin-bottom: 1rem !important;
+  }
+}
+@media (min-width: 896px) {
+  .py-3 {
+    padding-top: 5.5rem !important;
+  }
 }
 
 .font-monospace {
@@ -12782,7 +12792,59 @@ input[type="range"]::-moz-range-thumb {
   /* color: #f4623a !important; */
   color: var(--cs-text) !important;
 }
+
+@media (min-width: 375px) {
+  .language {
+    position: fixed;
+    top: 2rem;
+    right: 0.8rem;
+    padding-right: 1rem;
+  }
+  .language-sep {
+    color: #212529;
+  }
+  #mainNav .language-navbar-nav .nav-item .nav-link {
+    padding: 0rem 0.3rem;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 896px) {
+  .language {
+    position: fixed;
+    /* top: 1.5rem; */
+    right: 0.8rem;
+    padding-right: 1rem;
+  }
+  .language-sep {
+    color: #212529;
+  }
+  #mainNav .language-navbar-nav .nav-item .nav-link {
+    padding: 0rem 0.3rem;
+  }
+}
+
+/* @media (max-width: 430px) {
+  .language {
+    position: fixed;
+    top: 3rem;
+    right: 0.8rem;
+    padding-right: 1rem;
+  }
+  .language-sep {
+    color: #212529;
+  }
+  #mainNav .language-navbar-nav .nav-item .nav-link {
+    padding: 0rem 0.3rem;
+  }
+} */
+
 @media (min-width: 992px) {
+  .language {
+    position: fixed;
+    top: 3rem;
+    right: 1rem;
+    padding-right: 1rem;
+  }
   .language-link {
     padding-left: 0.5rem !important;
     padding-right: 0.5rem !important;
@@ -12803,35 +12865,6 @@ input[type="range"]::-moz-range-thumb {
   }
   #mainNav.navbar-shrink .language-navbar-nav .nav-item .nav-link:hover {
     color: var(--cs-text);
-  }
-}
-@media (min-width: 430px) and (max-width: 896px) {
-  .language {
-    position: fixed;
-    /* top: 1.5rem; */
-    right: 0.8rem;
-    padding-right: 1rem;
-  }
-  .language-sep {
-    color: #212529;
-  }
-  #mainNav .language-navbar-nav .nav-item .nav-link {
-    padding: 0rem 0.3rem;
-  }
-}
-
-@media (max-width: 430px) {
-  .language {
-    position: fixed;
-    top: 1.5rem;
-    right: 0.8rem;
-    padding-right: 1rem;
-  }
-  .language-sep {
-    color: #212529;
-  }
-  #mainNav .language-navbar-nav .nav-item .nav-link {
-    padding: 0rem 0.3rem;
   }
 }
 /* 共用CSS - S */
@@ -12857,14 +12890,13 @@ input[type="range"]::-moz-range-thumb {
   justify-content: center;
   text-align: center;
 }
-
+/* 
 blockquote {
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 1em 1.5em 1em 1.5em;
   position: relative;
-  /* line-height: 150%; */
   letter-spacing: 0.2rem;
   text-indent: 35px;
 }
@@ -12887,21 +12919,7 @@ blockquote:after {
   bottom: 0em;
   line-height: 0.1em;
   font-family: "Roboto", sans-serif;
-}
-
-.header-page {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: calc(20rem) 0 calc(10rem) 0;
-}
-
-.header-title-bg {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: calc(10rem) 0 calc(10rem) 0;
-}
+} */
 
 .page-background-gray {
   background-color: var(--bs-gray-100);
@@ -12972,7 +12990,7 @@ blockquote:after {
   font-weight: 500;
   letter-spacing: 0.1rem;
 }
-.text-introduction-blockquote  {
+.text-introduction-blockquote {
   font-size: 3em;
   line-height: 0.1em;
   font-family: "Roboto", sans-serif;
@@ -12991,6 +13009,20 @@ blockquote:after {
   color: var(--cs-bg-primity);
   font-weight: bold;
   font-family: var(--cs-font-family);
+}
+
+.header-page {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: calc(20rem) 0 calc(10rem) 0;
+}
+
+.header-title-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: calc(10rem) 0 calc(10rem) 0;
 }
 
 /* 重疊圖層 */
@@ -13020,6 +13052,17 @@ blockquote:after {
   min-height: 30%;
 }
 /* 重疊圖層 */
+
+/* 重疊圖層 - 聯繫我們 */
+.div-top-contact {
+  display: flex;
+  align-items: center;
+  z-index: 999;
+}
+.div-bottom-contact {
+  margin-left: -2%;
+}
+/* 重疊圖層 - 聯繫我們 */
 
 /* 課外資源 */
 .banner-div {
@@ -13836,12 +13879,16 @@ blockquote:after {
   color: #828282;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 375px) {
   .div-flex {
     margin-left: 0%;
   }
+  .header-page {
+    padding: calc(10rem) calc(45rem) calc(5rem) 0;
+    margin-top: calc(4rem);
+  }
 }
-@media screen and (max-width: 430px) {
+@media screen and (min-width: 414px) {
   .m-lt-10 {
     margin-left: 0;
     margin-top: 0;
@@ -13850,9 +13897,9 @@ blockquote:after {
     padding-left: 0rem !important;
   }
   .div-flex {
-    margin-left: 55%;
+    margin-left: 70%;
   }
-  blockquote {
+  /* blockquote {
     color: #fff;
     font-size: 1.1rem;
     font-weight: bold;
@@ -13880,7 +13927,7 @@ blockquote:after {
     bottom: -0.5em;
     line-height: 0.1em;
     font-family: "Roboto", sans-serif;
-  }
+  } */
   .text-introduction {
     font-size: 0.5rem;
   }
@@ -13895,7 +13942,7 @@ blockquote:after {
   }
 
   .header-page {
-    padding: calc(2rem) 0 calc(5rem) 0;
+    padding: calc(10rem) calc(48rem) calc(5rem) 0;
     margin-top: calc(4rem);
   }
 
@@ -13908,8 +13955,26 @@ blockquote:after {
     border-bottom: 2px solid;
   }
 }
+/* iPad Min*/
+@media screen and (min-width: 768px) {
+  .div-flex {
+    margin-left: 70%;
+  }
+  .header-page {
+    padding: calc(10rem) calc(78rem) calc(10rem) 0;
+  }
+}
+/* iPad */
+@media screen and (min-width: 810px) {
+  .div-flex {
+    margin-left: 70%;
+  }
+  .header-page {
+    padding: calc(10rem) calc(80rem) calc(10rem) 0;
+  }
+}
 
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 992px) {
   .pl-2 {
     padding-left: 0rem !important;
   }
@@ -13931,13 +13996,12 @@ blockquote:after {
     transform: scale(1);
   }
 
-  blockquote {
+  /* blockquote {
     color: #fff;
     font-size: 1rem;
     font-weight: bold;
     padding: 1em 1.5em 1em 1.5em;
     position: relative;
-    /* line-height: 150%; */
     letter-spacing: 0.2rem;
     text-indent: 35px;
   }
@@ -13960,12 +14024,10 @@ blockquote:after {
     bottom: -0.5em;
     line-height: 0.1em;
     font-family: "Roboto", sans-serif;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  .div-flex {
-    margin-left: 85%;
+  } */
+  .header-page {
+    padding: calc(20rem) 0 calc(10rem) 0;
+    margin-top: 0rem;
   }
 }
 
@@ -13998,8 +14060,13 @@ blockquote:after {
     top: 120%;
   }
 }
+@media screen and (min-width: 1366px) {
+  .div-flex {
+    margin-left: 90%;
+  }
+}
 
-/* Page Public Class - E */
+/* 共用CSS - E */
 
 /* Home 2021/10/31 -　S */
 #HeaderTitle {
@@ -14456,7 +14523,8 @@ div .MdGHD01Head {
     padding: 2rem 0;
   }
   .header-page-staff {
-    padding: calc(2rem) 0 calc(5rem) 0;
+    /* padding: calc(2rem) 0 calc(5rem) 0; */
+    padding: calc(10rem) calc(48rem) calc(5rem) 0;
     margin-top: calc(4rem);
   }
 

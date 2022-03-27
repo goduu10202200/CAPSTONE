@@ -77,7 +77,7 @@
         },
         {
           "cn": "升學諮詢",
-          "en": "Education advisory",
+          "en": "Admissions Counselling",
           "service": "advisory",
           "url": ""
         }
@@ -416,6 +416,52 @@
     {
       "service": "advisory",
       "url": ""
+    }
+  ],
+  "banner": [
+    {
+      "service": "aboutus",
+      "url": "~/../assets/img/banner/aboutus.png"
+    },
+    {
+      "service": "internationalcourricula",
+      "url": "~/../assets/img/banner/internationalcourricula.png"
+    },
+    {
+      "service": "admissions",
+      "url": "~/../assets/img/banner/admissions.png"
+    },
+    {
+      "service": "standardisedprep",
+      "url": "~/../assets/img/banner/standardisedprep.png"
+    },
+    {
+      "service": "feedback",
+      "url": "~/../assets/img/banner/feedback.png"
+    },
+    {
+      "service": "events",
+      "url": "~/../assets/img/banner/events.png"
+    },
+    {
+      "service": "news",
+      "url": "~/../assets/img/banner/news.png"
+    },
+    {
+      "service": "signup",
+      "url": "~/../assets/img/banner/signup.png"
+    },
+    {
+      "service": "question",
+      "url": "~/../assets/img/banner/question.png"
+    },
+    {
+      "service": "contactus",
+      "url": "~/../assets/img/banner/contactus.png"
+    },
+    {
+      "service": "trafficinformation",
+      "url": "~/../assets/img/banner/trafficinformation.png"
     }
   ],
   "agescrollbar": [
