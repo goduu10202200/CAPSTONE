@@ -18,6 +18,12 @@
     <!-- <link href="./css/swiper.min.css" rel="stylesheet" /> -->
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <!-- swiper -->
+
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-submenu@3.0.1/dist/css/bootstrap-submenu.css">
+
+
+    <script src="https://unpkg.com/bootstrap-submenu@3.0.1/dist/js/bootstrap-submenu.js" defer></script>
+
 </head>
 
 <body id="page-top">
@@ -30,19 +36,31 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul id="menu" class="navbar-nav ms-auto my-2 my-lg-0">
+                <!-- 選單 -->
+                <ul id="menu" class="navbar-nav ms-auto my-2 my-lg-0"></ul>
+
+                <!-- <ul class="navbar-nav ms-auto my-2 my-lg-0">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#about" id="navbarScrollingDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">TestDropDown</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                            <li><a class="dropdown-item dropdown-item-link nav-link" href="#">Services</a></li>
+                            <li class="dropdown dropdown-submenu">
+                                <a class="dropdown-item dropdown-item-link nav-link" href="#"
+                                    data-toggle="dropdown">Services</a>
+                               子選單 
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item dropdown-item-link nav-link" href="#">Services</a>
+                                    </li>
+                                </ul>
+                                子選單 
+                            </li>
                             <li><a class="dropdown-item dropdown-item-link nav-link" href="#">Another action</a>
                             </li>
                         </ul>
                     </li>
-                    <!-- <li class="nav-item">
+                     <li class="nav-item">
                         <a class="nav-link" service="about">About</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -59,8 +77,8 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Faculty Members</a></li> -->
-                </ul>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Faculty Members</a></li> 
+                </ul> -->
             </div>
             <div class="language">
                 <ul class="language-navbar-nav">
@@ -115,7 +133,8 @@
     <script>
         let set_page = "home";
         let count_about = 0,
-            count_course = 0;
+            count_course = 0,
+            count_student = 0;
         $(function () {
 
             $("#main").load("./page/" + set_page + ".html");
@@ -143,10 +162,7 @@
 
 
             emailjs.init('Yk_XfYkcIUGW4EvP7')
-
-
-
-
+            $('[data-submenu]').submenupicker();
         })
 
 
@@ -331,9 +347,10 @@
                 // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
                 // $('.language-sep').attr('style', 'color:#6c757d')
             }
-
+            console.log("ChangePage-page",page)
 
             if (page == "aboutus") {
+                
                 count_about++;
 
                 //手機或平板裝置 - 點擊第二次
@@ -366,7 +383,21 @@
                     }, 500);
                 }
 
-            } else {
+            }
+            else if (page == "course" || page == "StudentService") {
+                //手機或平板裝置 - 點擊第二次
+                if (!$("#" + page).hasClass("show") && $(window).width() <= 830) {
+                    $("#" + page).next().removeClass("show");
+                }
+            }
+            else if (page == "intcourse") {
+                //手機或平板裝置 - 點擊第二次
+                if (!$("#" + page).hasClass("show") && $(window).width() <= 830) {
+                    // $("#intcourse").children(".dropdown-menu");
+                    $("#" + page).children(".dropdown-menu").removeClass("show");
+                }
+            }
+            else {
                 $("#main").empty();
                 // 清空紀錄
                 count_course = 0;

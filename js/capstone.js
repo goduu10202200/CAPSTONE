@@ -277,6 +277,8 @@ function Menu_Language(lan) {
     $("#menu").append(function () {
       let returnpage;
       if (val["pading"].length > 0 && val["url"] == "") {
+        /* 有分頁 */
+
         returnpage = $("<li>")
           .addClass("nav-item dropdown")
           .append(
@@ -295,17 +297,58 @@ function Menu_Language(lan) {
               .append(function () {
                 let li_pading = [];
                 $.each(val["pading"], function (index_pading, val_pading) {
-                  li_pading.push(
-                    $("<li>").append(
-                      $("<a>")
-                        .addClass("dropdown-item dropdown-item-link nav-link")
-                        .attr(
-                          "onclick",
-                          "ChangePge('" + val_pading["service"] + "')"
+                  let ul_sub = [];
+                  if (val_pading["pading"] != undefined) {
+                    /* 2個子選單 */
+                    // ul_sub.push($("<ul>").addClass("dropdown-menu"));
+                    $.each(val_pading["pading"], function (index_sub, val_sub) {
+                      ul_sub.push(
+                        $("<li>").append(
+                          $("<a>")
+                            .addClass(
+                              "dropdown-item dropdown-item-link nav-link"
+                            )
+                            .attr("id", val_sub["service"])
+                            .attr(
+                              "onclick",
+                              "ChangePge('" + val_sub["service"] + "')"
+                            )
+                            .append(val_sub[lan])
                         )
-                        .append(val_pading[lan])
-                    )
-                  );
+                      );
+                    });
+                    li_pading.push(
+                      $("<li>")
+                        .addClass("dropdown dropdown-submenu")
+                        .append(
+                          $("<a>")
+                            .addClass(
+                              "dropdown-item dropdown-item-link nav-link"
+                            )
+                            .attr("id", val_pading["service"])
+                            .attr(
+                              "onclick",
+                              "ChangePge('" + val_pading["service"] + "')"
+                            )
+                            .append(val_pading[lan])
+                            .append(
+                              $("<ul>").addClass("dropdown-menu").append(ul_sub)
+                            )
+                        )
+                    );
+                  } else {
+                    li_pading.push(
+                      $("<li>").append(
+                        $("<a>")
+                          .addClass("dropdown-item dropdown-item-link nav-link")
+                          .attr(
+                            "onclick",
+                            "ChangePge('" + val_pading["service"] + "')"
+                          )
+                          .append(val_pading[lan])
+                      )
+                    );
+                  }
                 });
                 return li_pading;
               })
@@ -400,7 +443,6 @@ function About_Language(lan) {
 function Aboutus_Language(lan) {
   let dataMenu = _GetMenu();
   let dataBanner = _GetBanner("aboutus");
-  console.log(dataBanner);
   // Clear item
   $("#AboutTitle").empty();
   $("#header_aboutus").empty();
@@ -408,7 +450,6 @@ function Aboutus_Language(lan) {
   $("#header_aboutus").css("background-image", 'url("' + dataBanner + '")');
 
   $.each(dataMenu, function (index, val) {
-    console.log(dataMenu);
     if (index == 1) {
       $("#AboutTitle").text(val["pading"][0][lan]);
     }
@@ -498,7 +539,7 @@ function Contactus_Language(lan) {
   $("#header_contactus").css("background-image", 'url("' + dataBanner + '")');
 }
 function TrafficInformation_Language(lan) {
-  let dataBanner = _GetBanner("trafficInformation");
+  let dataBanner = _GetBanner("trafficinformation");
   // Clear item
   $("#header_trafficinformation").empty();
 

@@ -60,8 +60,34 @@
         {
           "cn": "國際課程",
           "en": "國際課程",
-          "service": "gemstone",
-          "url": ""
+          "service": "intcourse",
+          "url": "",
+          "pading": [
+            {
+              "cn": "國高中進度課程",
+              "en": "MIDDLE / HIGH SCHOOL SUBJECT",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "英國中等教育課程",
+              "en": "GCSE & I/GCSE",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "英國高等教育課程",
+              "en": "GCE AS & A LEVEL",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "國際文憑中學課程",
+              "en": "IB® DP/IB® MNP",
+              "service": "",
+              "url": ""
+            }
+          ]
         },
         {
           "//_cn": "課綱進度",
@@ -73,12 +99,50 @@
           "cn": "檢定課程",
           "en": "檢定課程",
           "service": "verificationcourse",
-          "url": ""
+          "url": "",
+          "pading": [
+            {
+              "cn": "進階先修課程",
+              "en": "AP®",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "托福",
+              "en": "TOEFL®",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "雅思",
+              "en": "IELTS®",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "美國高考/美國高考預考",
+              "en": "SAT®/PSAT®",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "美國大學入學考試",
+              "en": "ACT®",
+              "service": "",
+              "url": ""
+            },
+            {
+              "cn": "美國中學入學考試",
+              "en": "SSAT®",
+              "service": "",
+              "url": ""
+            }
+          ]
         },
         {
           "cn": "升學諮詢",
           "en": "Admissions Counselling",
-          "service": "advisory",
+          "service": "admissions",
           "url": ""
         }
       ]
@@ -86,7 +150,7 @@
     {
       "cn": "學員服務",
       "en": "Student feedback",
-      "url": "",
+      "url": "StudentService",
       "pading": [
         {
           "cn": "學生回饋",

@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
 // 偵測網頁寬度 2021/09/21
 window.addEventListener("load", function (event) {
-  if (document.body.clientWidth <= 875) {
+  if (document.body.clientWidth <= 900) {
     $(".navbar-brand").css("display", "none");
   } else {
     $(".navbar-brand").css("display", "block");
@@ -79,7 +79,7 @@ window.addEventListener("load", function (event) {
 });
 
 window.addEventListener("resize", function (event) {
-  if (document.body.clientWidth <= 875) {
+  if (document.body.clientWidth <= 900) {
     $(".navbar-brand").css("display", "none");
   } else {
     $(".navbar-brand").css("display", "block");
