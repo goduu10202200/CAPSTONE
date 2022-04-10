@@ -66,7 +66,7 @@
             {
               "cn": "國高中進度課程",
               "en": "MIDDLE / HIGH SCHOOL SUBJECT",
-              "service": "",
+              "service": "MHcourse",
               "url": ""
             },
             {
@@ -165,13 +165,6 @@
           "url": ""
         }
       ]
-    },
-    {
-      "cn": "最新消息",
-      "en": "最新消息",
-      "service": "home",
-      "url": "",
-      "pading": []
     },
     {
       "cn": "更多資訊",
@@ -489,6 +482,10 @@
     },
     {
       "service": "internationalcourricula",
+      "url": "~/../assets/img/banner/internationalcourricula.png"
+    },
+    {
+      "service": "MHcourse",
       "url": "~/../assets/img/banner/internationalcourricula.png"
     },
     {

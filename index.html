@@ -21,9 +21,9 @@
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-submenu@3.0.1/dist/css/bootstrap-submenu.css">
 
-
     <script src="https://unpkg.com/bootstrap-submenu@3.0.1/dist/js/bootstrap-submenu.js" defer></script>
 
+    <script src="https://kit.fontawesome.com/7232f0dba9.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="page-top">
@@ -347,10 +347,10 @@
                 // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
                 // $('.language-sep').attr('style', 'color:#6c757d')
             }
-            console.log("ChangePage-page",page)
+            console.log("ChangePage-page", page)
 
             if (page == "aboutus") {
-                
+
                 count_about++;
 
                 //手機或平板裝置 - 點擊第二次
@@ -392,8 +392,11 @@
             }
             else if (page == "intcourse") {
                 //手機或平板裝置 - 點擊第二次
-                if (!$("#" + page).hasClass("show") && $(window).width() <= 830) {
-                    // $("#intcourse").children(".dropdown-menu");
+
+                console.log(page)
+                if ($("#" + page).hasClass("show") && $(window).width() <= 830) {
+                    console.log($("#" + page).hasClass("show"))
+                    $("#intcourse").children(".dropdown-menu");
                     $("#" + page).children(".dropdown-menu").removeClass("show");
                 }
             }

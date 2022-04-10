@@ -49,8 +49,6 @@ function _SetMainData(len, page) {
   } else {
     _language = len;
   }
-  // console.log("_SetMainData._language", _language);
-  // console.log("_SetMainData.page", page);
   if (_language == "en") {
     _EnData(page);
   } else if (_language == "cn") {
@@ -71,6 +69,7 @@ function _GetCommunity() {
   });
   return dataCommunity;
 }
+
 function _GetMenu() {
   let dataMenu;
   $.ajax({
@@ -159,6 +158,11 @@ function _EnData(page) {
     case "course":
       Course_Language("en");
       break;
+    /* 國際課程 */
+    case "MHcourse":
+      MHcourse_Language("en");
+      break;
+    /* 國際課程 */
     case "staff":
       Staff_Language("en");
       break;
@@ -221,6 +225,11 @@ function _CnData(page) {
     case "course":
       Course_Language("cn");
       break;
+    /* 國際課程 */
+    case "MHcourse":
+      MHcourse_Language("cn");
+      break;
+    /* 國際課程 */
     case "staff":
       Staff_Language("cn");
       break;
@@ -272,11 +281,14 @@ function Menu_Language(lan) {
   let dataMenu = _GetMenu();
   // Clear item
   $("#menu").empty();
+  
 
+  
   $.each(dataMenu, function (index, val) {
     $("#menu").append(function () {
       let returnpage;
-      if (val["pading"].length > 0 && val["url"] == "") {
+      // && val["url"] == ""
+      if (val["pading"].length > 0) {
         /* 有分頁 */
 
         returnpage = $("<li>")
@@ -467,6 +479,26 @@ function Course_Language(lan) {
     'url("~/../assets/img/page_header/about.jpg")'
   );
 }
+
+/* 國際課程 - S */
+
+// 國/高中進度課程
+function MHcourse_Language(lan) {
+  let dataMenu = _GetMenu();
+  let dataBanner = _GetBanner("MHcourse");
+  // Clear item
+  $("#header_MHcourse").empty();
+  // Set Header
+  $("#header_MHcourse").css("background-image", 'url("' + dataBanner + '")');
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 1) {
+      // $("#MHcourseTitle").text(val["pading"][0][lan]);
+    }
+  });
+}
+
+/* 國際課程 - E */
 
 function Staff_Language(lan) {
   let ReturnDataContent = _GetContent("staff");
