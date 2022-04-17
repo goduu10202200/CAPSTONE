@@ -101,6 +101,24 @@ function _GetBanner(type) {
   return dataBanner;
 }
 
+// function _GetCourse_List(page) {
+//   let ReturnData = "";
+//   let index = 0;
+//   $.ajax({
+//     type: "POST",
+//     url: "./assets/capstone.json",
+//     async: false,
+//     success: function (data) {
+//       index = $.map(data["menu"][2].pading, function (item, index) {
+//         return item.service;
+//       }).indexOf(page);
+
+//       ReturnData = data["menu"][2].pading[index];
+//     },
+//   });
+//   return ReturnData;
+// }
+
 function _GetContent(page) {
   let dataContent;
   $.ajax({
@@ -281,14 +299,12 @@ function Menu_Language(lan) {
   let dataMenu = _GetMenu();
   // Clear item
   $("#menu").empty();
-  
 
-  
   $.each(dataMenu, function (index, val) {
     $("#menu").append(function () {
       let returnpage;
       // && val["url"] == ""
-      if (val["pading"].length > 0) {
+      if (val["pading"].length > 0 && val["url"] == "") {
         /* 有分頁 */
 
         returnpage = $("<li>")
@@ -300,11 +316,12 @@ function Menu_Language(lan) {
               .attr("id", val["service"])
               .attr("data-bs-toggle", "dropdown")
               .attr("aria-expanded", "false")
+              .attr("data-bs-auto-close", "outside")
               .append(val[lan])
           )
           .append(
             $("<ul>")
-              .addClass("dropdown-menu")
+              .addClass("dropdown-menu dropdown-submenu")
               .attr("aria-labelledby", val["service"])
               .append(function () {
                 let li_pading = [];
@@ -312,7 +329,6 @@ function Menu_Language(lan) {
                   let ul_sub = [];
                   if (val_pading["pading"] != undefined) {
                     /* 2個子選單 */
-                    // ul_sub.push($("<ul>").addClass("dropdown-menu"));
                     $.each(val_pading["pading"], function (index_sub, val_sub) {
                       ul_sub.push(
                         $("<li>").append(
@@ -331,21 +347,27 @@ function Menu_Language(lan) {
                     });
                     li_pading.push(
                       $("<li>")
-                        .addClass("dropdown dropdown-submenu")
+                        .addClass("nav-item dropdown")
+                        //dropend -> 佑箭頭
                         .append(
                           $("<a>")
-                            .addClass(
-                              "dropdown-item dropdown-item-link nav-link"
-                            )
+                            .addClass("nav-link dropdown-toggle")
+
                             .attr("id", val_pading["service"])
                             .attr(
                               "onclick",
                               "ChangePge('" + val_pading["service"] + "')"
                             )
+                            .attr("data-bs-toggle", "dropdown")
+                            .attr("aria-expanded", "false")
+
                             .append(val_pading[lan])
-                            .append(
-                              $("<ul>").addClass("dropdown-menu").append(ul_sub)
-                            )
+                        )
+                        .append(
+                          $("<ul>")
+                            .addClass("dropdown-menu tt")
+                            .attr("aria-labelledby", val_pading["service"])
+                            .append(ul_sub)
                         )
                     );
                   } else {
@@ -367,7 +389,7 @@ function Menu_Language(lan) {
           );
       } else if (val["pading"].length > 0 && val["url"] != "") {
         returnpage = $("<li>")
-          .addClass("nav-item dropdown")
+          .addClass("nav-item dropdown ")
           .append(
             $("<a>")
               .addClass("nav-link dropdown-toggle")
@@ -375,7 +397,6 @@ function Menu_Language(lan) {
                 "onclick",
                 "ChangePge('" + val["service"] + "','" + val["url"] + "')"
               )
-              // .attr("href", val["url"])
               .attr("id", val["service"])
               .attr("data-bs-toggle", "dropdown")
               .attr("aria-expanded", "false")

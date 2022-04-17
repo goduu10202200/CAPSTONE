@@ -32,12 +32,6 @@
           "url": "environment"
         },
         {
-          "cn": "課外資源",
-          "en": "課外資源",
-          "service": "aboutus",
-          "url": "resource"
-        },
-        {
           "cn": "防疫政策",
           "en": "COVID-19 policy",
           "service": "aboutus",
@@ -88,12 +82,6 @@
               "url": ""
             }
           ]
-        },
-        {
-          "//_cn": "課綱進度",
-          "//_en": "課綱進度",
-          "//_service": "coursedescription",
-          "//_url": ""
         },
         {
           "cn": "檢定課程",
@@ -150,6 +138,7 @@
     {
       "cn": "學員服務",
       "en": "Student feedback",
+      "service": "StudentService",
       "url": "StudentService",
       "pading": [
         {
