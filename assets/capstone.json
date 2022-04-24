@@ -76,7 +76,7 @@
               "url": ""
             },
             {
-              "cn": "國際文憑中學課程",
+              "cn": "IB® 國際文憑中學課程",
               "en": "IB® DP/IB® MNP",
               "service": "",
               "url": ""
@@ -90,37 +90,37 @@
           "url": "",
           "pading": [
             {
-              "cn": "進階先修課程",
+              "cn": "AP® 進階先修課程",
               "en": "AP®",
-              "service": "",
+              "service": "APcourse",
               "url": ""
             },
             {
-              "cn": "托福",
+              "cn": "TOEFL® 托福",
               "en": "TOEFL®",
               "service": "",
               "url": ""
             },
             {
-              "cn": "雅思",
+              "cn": "IELTS® 雅思",
               "en": "IELTS®",
               "service": "",
               "url": ""
             },
             {
-              "cn": "美國高考/美國高考預考",
+              "cn": "SAT® 美國高考/ PSAT® 美國高考預考",
               "en": "SAT®/PSAT®",
               "service": "",
               "url": ""
             },
             {
-              "cn": "美國大學入學考試",
+              "cn": "ACT® 美國大學入學考試",
               "en": "ACT®",
               "service": "",
               "url": ""
             },
             {
-              "cn": "美國中學入學考試",
+              "cn": "SSAT® 美國中學入學考試",
               "en": "SSAT®",
               "service": "",
               "url": ""
@@ -144,7 +144,7 @@
         {
           "cn": "學生回饋",
           "en": "學生回饋",
-          "service": "sfeedback",
+          "service": "feedback",
           "url": ""
         },
         {
@@ -476,6 +476,10 @@
     {
       "service": "MHcourse",
       "url": "~/../assets/img/banner/internationalcourricula.png"
+    },
+    {
+      "service": "APcourse",
+      "url": "~/../assets/img/banner/APcourse.png"
     },
     {
       "service": "admissions",

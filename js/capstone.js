@@ -181,6 +181,12 @@ function _EnData(page) {
       MHcourse_Language("en");
       break;
     /* 國際課程 */
+
+    /* 檢定課程 */
+    case "APcourse":
+      APcourse_Language("en");
+      break;
+    /* 檢定課程 */
     case "staff":
       Staff_Language("en");
       break;
@@ -202,8 +208,8 @@ function _EnData(page) {
     case "advisory":
       Advisory_Language("en");
       break;
-    case "s-feedback":
-      Sfeedback_Language("en");
+    case "feedback":
+      feedback_Language("en");
       break;
     case "sevents":
       Sevents_Language("en");
@@ -248,6 +254,12 @@ function _CnData(page) {
       MHcourse_Language("cn");
       break;
     /* 國際課程 */
+
+    /* 檢定課程 */
+    case "APcourse":
+      APcourse_Language("en");
+      break;
+    /* 檢定課程 */
     case "staff":
       Staff_Language("cn");
       break;
@@ -269,8 +281,8 @@ function _CnData(page) {
     case "advisory":
       Advisory_Language("cn");
       break;
-    case "s-feedback":
-      Sfeedback_Language("cn");
+    case "feedback":
+      feedback_Language("cn");
       break;
     case "sevents":
       Sevents_Language("cn");
@@ -518,8 +530,26 @@ function MHcourse_Language(lan) {
     }
   });
 }
-
 /* 國際課程 - E */
+
+/* 檢定課程 - S */
+
+// 進階先修課程
+function APcourse_Language(lan) {
+  let dataMenu = _GetMenu();
+  let dataBanner = _GetBanner("APcourse");
+  // Clear item
+  $("#header_APcourse").empty();
+  // Set Header
+  $("#header_APcourse").css("background-image", 'url("' + dataBanner + '")');
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 1) {
+      // $("#MHcourseTitle").text(val["pading"][0][lan]);
+    }
+  });
+}
+/* 檢定課程 - E */
 
 function Staff_Language(lan) {
   let ReturnDataContent = _GetContent("staff");
@@ -563,7 +593,20 @@ function Advisory_Language(lan) {
   //   }
   // });
 }
-function Sfeedback_Language(lan) {}
+function feedback_Language(lan) {
+  let dataMenu = _GetMenu();
+  let dataBanner = _GetBanner("feedback");
+  // Clear item
+  $("#header_feedback").empty();
+  // Set Header
+  $("#header_feedback").css("background-image", 'url("' + dataBanner + '")');
+
+  $.each(dataMenu, function (index, val) {
+    if (index == 1) {
+      // $("#MHcourseTitle").text(val["pading"][0][lan]);
+    }
+  });
+}
 function Sevents_Language(lan) {}
 function AdmissionProcess_Language(lan) {}
 /* 更多資訊 */

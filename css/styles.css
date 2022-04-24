@@ -671,8 +671,15 @@ progress {
   margin-left: auto;
   margin-right: auto;
 }
+.img-55 {
+  display: block;
+  max-width: 50%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
 .img-15 {
-  max-width: 15%;
+  max-width: 20%;
   height: auto;
 }
 .img-small {
@@ -725,6 +732,10 @@ progress {
   }
 }
 @media (max-width: 430px) {
+  .img-15 {
+    max-width: 35%;
+    height: auto;
+  }
   .img-fluid {
     padding-bottom: 1.5rem;
   }
@@ -4076,7 +4087,7 @@ fieldset:disabled .btn {
   }
   .dropdown-submenu .dropdown-menu {
     top: 0;
-    left: 100%;
+    left: 75%;
     margin-top: -10px;
     margin-left: -1px;
     -webkit-border-radius: 0 6px 6px 6px;
@@ -8279,6 +8290,9 @@ fieldset:disabled .btn {
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
+  .pl-3 {
+    padding-left: 0.5rem !important;
+  }
 }
 @media (min-width: 896px) {
   .py-3 {
@@ -12061,7 +12075,7 @@ body {
 }
 
 .page-section h3 {
-  padding-top: 10%;
+  padding-top: 5%;
 }
 .page-section-2 h3 {
   padding-top: 10%;
@@ -13148,7 +13162,12 @@ blockquote:after {
   font-weight: bold;
   font-family: var(--cs-font-family);
 }
-
+.cs-span-1{
+  color: var(--cs-bg-primity);
+}
+.cs-span-gray{
+  color: var(--bs-gray-600);
+}
 .cs-title-step {
   color: var(--cs-bg-primity);
   font-size: 7rem;
@@ -13756,6 +13775,22 @@ blockquote:after {
   padding: 1.2rem;
 }
 
+.circular--landscape {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px var(--cs-bg-primity-2) solid;
+  padding: 1.8rem;
+}
+
+.circular--landscape img {
+  width: auto;
+  height: 100%;
+}
+
 .icon-circle:hover::before {
   border: 3px var(--cs-color) solid;
   background-color: var(--cs-color);
@@ -13946,8 +13981,8 @@ blockquote:after {
   transition: 0.5s;
 }
 
-.cs-block .block-text span.comment a i {
-  color: var(--cs-text);
+.cs-block .block-text span.comment  i {
+  color: var(--cs-bg-primity);
   padding-left: 7px;
 }
 
