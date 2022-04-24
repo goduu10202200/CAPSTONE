@@ -13162,10 +13162,10 @@ blockquote:after {
   font-weight: bold;
   font-family: var(--cs-font-family);
 }
-.cs-span-1{
+.cs-span-1 {
   color: var(--cs-bg-primity);
 }
-.cs-span-gray{
+.cs-span-gray {
   color: var(--bs-gray-600);
 }
 .cs-title-step {
@@ -13941,6 +13941,7 @@ blockquote:after {
 
 .cs-block .block-text {
   margin-bottom: 30px;
+  padding-bottom: 10%;
   position: relative;
   background: #fff;
   width: 100%;
@@ -13981,7 +13982,7 @@ blockquote:after {
   transition: 0.5s;
 }
 
-.cs-block .block-text span.comment  i {
+.cs-block .block-text span.comment i {
   color: var(--cs-bg-primity);
   padding-left: 7px;
 }
