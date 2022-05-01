@@ -458,13 +458,11 @@ function Menu_Language(lan) {
 }
 
 function Home_Language(lan) {
-  let ReturnDataContent = _GetContent("home");
-  let DataHeader = ReturnDataContent["header"]["title"][0];
-
-  // Clear item
-  $("#HeaderTitle").empty();
-
-  $("#HeaderTitle").text(DataHeader[lan]);
+  // let ReturnDataContent = _GetContent("home");
+  // let DataHeader = ReturnDataContent["header"]["title"][0];
+  // // Clear item
+  // $("#HeaderTitle").empty();
+  // $("#HeaderTitle").text(DataHeader[lan]);
 }
 
 function About_Language(lan) {
@@ -600,14 +598,15 @@ function feedback_Language(lan) {
   $("#header_feedback").empty();
   // Set Header
   $("#header_feedback").css("background-image", 'url("' + dataBanner + '")');
-
-  $.each(dataMenu, function (index, val) {
-    if (index == 1) {
-      // $("#MHcourseTitle").text(val["pading"][0][lan]);
-    }
-  });
 }
-function Sevents_Language(lan) {}
+function Sevents_Language(lan) {
+  let dataMenu = _GetMenu();
+  let dataBanner = _GetBanner("sevents");
+  // Clear item
+  $("#header_sevents").empty();
+  // Set Header
+  $("#header_sevents").css("background-image", 'url("' + dataBanner + '")');
+}
 function AdmissionProcess_Language(lan) {}
 /* 更多資訊 */
 function Signup_Language(lan) {

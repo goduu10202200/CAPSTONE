@@ -132,35 +132,23 @@
 
     <script>
         let set_page = "home";
-        let count_about = 0,
-            count_course = 0,
-            count_student = 0;
+
         $(function () {
+
+            new WOW().init();
+
+            emailjs.init('Yk_XfYkcIUGW4EvP7')
 
             $("#main").load("./page/" + set_page + ".html");
 
             // 預設語言 Language
             setTimeout(() => { _SetMainData('cn', set_page); }, 100);
 
-            // 測試用
-            // $("#main").load("./page/coursedescription.html");
-            // setTimeout(() => {
-            //     _SetMainData('', 'coursedescription');
-            // }, 100);
-
-            // $('nav').addClass('navbar-shrink')
-            // $('#cs_logo').attr('src', '~/../assets/img/logo.svg')
-            // $('.language-sep').attr('style', 'color:#6c757d')
-
             // Commuinty Button
             GetCommunity()
 
             // Top Button
             goToTop();
-
-            new WOW().init();
-
-            emailjs.init('Yk_XfYkcIUGW4EvP7')
         })
 
 
@@ -171,10 +159,13 @@
                 $(".sc-7dvmpp-1").hide();
 
             }, 5000);
-            // Include JS Files
-            $.getScript("./js/scrollbar.js")
 
-
+            // Model 圖片
+            $('.pop').on('click', function () {
+                console.log('test')
+                $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+                $('#imagemodal').modal('show');
+            });
 
             // var swiper = new Swiper(".mySwiper", {
             //     pagination: {

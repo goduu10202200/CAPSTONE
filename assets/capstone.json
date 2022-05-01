@@ -20,7 +20,7 @@
           "url": "philosophy"
         },
         {
-          "cn": "優質師資",
+          "cn": "教育顧問",
           "en": "Meet our staff",
           "service": "aboutus",
           "url": "staff"
@@ -494,7 +494,7 @@
       "url": "~/../assets/img/banner/feedback.png"
     },
     {
-      "service": "events",
+      "service": "sevents",
       "url": "~/../assets/img/banner/events.png"
     },
     {
@@ -516,58 +516,6 @@
     {
       "service": "trafficinformation",
       "url": "~/../assets/img/banner/trafficinformation.png"
-    }
-  ],
-  "agescrollbar": [
-    {
-      "3-10": [
-        {
-          "en": [
-            {
-              "img_src": "./assets/img/page/home/age/p1.jpg",
-              "header": "一年級 ~ 六年級 / G1 ~ G6",
-              "content": "we offer a uniquely beautiful and inspiring setting, allowing the girls to fully immerse themselves in their learning. All year groups focus on an immersive and holistic curriculum model – The Cranwell Curriculum – which has been designed to be diverse, engaging and girl-centered."
-            }
-          ],
-          "cn": [
-            {
-              "name": "cn 3-10"
-            }
-          ]
-        }
-      ],
-      "11-15": [
-        {
-          "en": [
-            {
-              "img_src": "./assets/img/page/home/age/p2.jpg",
-              "header": "七年級 ~ 九年級 / G17 ~ G9",
-              "content": "we celebrate the success of all our girls – enabling her to develop the confidence and character to explore her unique talents. Our expert teachers are specialised in a wealth of subjects to encourage our pupils to feed their curiosity and challenge themselves in new ways...."
-            }
-          ],
-          "cn": [
-            {
-              "name": "cn"
-            }
-          ]
-        }
-      ],
-      "16-18": [
-        {
-          "en": [
-            {
-              "img_src": "./assets/img/page/home/age/p3.jpg",
-              "header": "十年級 ~ 十二年級 / G10 ~ G12",
-              "content": "Our Sixth Form is a vibrant, supportive and ambitious place to study.Our girls can choose either A Levels or the International Baccalaureate Diploma – a unique offering in the local area. Both routes allow students to pursue their passions and facilitate entry to the highest quality universities through greater freedom and dynamic ways of learning. Take a look at our latest set of outstanding A Level and IB results."
-            }
-          ],
-          "cn": [
-            {
-              "name": "cn"
-            }
-          ]
-        }
-      ]
     }
   ],
   "community": [
