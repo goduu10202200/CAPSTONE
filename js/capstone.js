@@ -1,27 +1,3 @@
-/* Why Capstone Model - S 2021/11/14 */
-function _ShowCapstoneModel(el, type) {
-  const el_src = $(el).find("img").attr("src");
-  $("#CapstoneModalImg").attr("src", el_src);
-  $("#CapstoneModal").modal("show");
-
-  switch (type) {
-    case "classroom":
-      $("#CapstoneModalHeader").text("教室環境");
-      break;
-    case "equipment":
-      $("#CapstoneModalHeader").text("硬體設備");
-      break;
-    case "teaching":
-      $("#CapstoneModalHeader").text("優質教學");
-      break;
-    case "service":
-      $("#CapstoneModalHeader").text("特別服務");
-      break;
-    default:
-  }
-}
-/* Why Capstone Model - E 2021/11/14 */
-
 // Get URL Language 2021/10/11
 function _GetUrlLanguage() {
   let ReturnData = "cn";
@@ -167,9 +143,6 @@ function _EnData(page) {
     case "home":
       Home_Language("en");
       break;
-    case "about":
-      About_Language("en");
-      break;
     case "aboutus":
       Aboutus_Language("en");
       break;
@@ -239,9 +212,6 @@ function _CnData(page) {
   switch (page) {
     case "home":
       Home_Language("cn");
-      break;
-    case "about":
-      About_Language("cn");
       break;
     case "aboutus":
       Aboutus_Language("cn");
@@ -465,32 +435,100 @@ function Home_Language(lan) {
   // $("#HeaderTitle").text(DataHeader[lan]);
 }
 
-function About_Language(lan) {
-  let dataMenu = _GetMenu();
-  // Clear item
-  $("#AboutTitle").empty();
-
-  // Set Header
-  $("#header_about").css(
-    "background-image",
-    'url("~/../assets/img/page_header/about.jpg")'
-  );
-
-  $.each(dataMenu, function (index, val) {
-    if (index == 1) {
-      $("#AboutTitle").text(val[lan]);
-    }
-  });
-}
-
 function Aboutus_Language(lan) {
+  let cn1 = "",
+    cn2 = "";
   let dataMenu = _GetMenu();
   let dataBanner = _GetBanner("aboutus");
+  let ListSwiperEnvironment = [1, 2, 3, 4, 5, 6, 7, 8];
+  let environment_content = _GetContent("aboutus")["environment"];
+
   // Clear item
   $("#AboutTitle").empty();
   $("#header_aboutus").empty();
+
   // Set Header
   $("#header_aboutus").css("background-image", 'url("' + dataBanner + '")');
+
+  // 環境介紹
+  setTimeout(() => {
+    $.each(ListSwiperEnvironment, function (index, val) {
+      let seq = index + 1;
+      /* 取得內容 */
+      switch (seq) {
+        case 6:
+          cn1 = environment_content["content2"]["cn1"];
+          cn2 = environment_content["content2"]["cn2"];
+          break;
+        case 7:
+          cn1 = environment_content["content3"]["cn1"];
+          cn2 = environment_content["content3"]["cn2"];
+          break;
+
+        case 8:
+          cn1 = environment_content["content4"]["cn1"];
+          cn2 = environment_content["content4"]["cn2"];
+          break;
+        default:
+          cn1 = environment_content["content1"]["cn1"];
+          cn2 = environment_content["content1"]["cn2"];
+          break;
+      }
+
+      let SwiperEnvironmentContent =
+        '<div class="container py-5  px-lg-5"> ' +
+        '<div class="row gx-4 gx-lg-5 justify-content-center buil01-template-03"> ' +
+        '<div class="col-md-2"> ' +
+        '<div class="title-area fadeUp text-white" style="opacity: 1;transform: matrix(1, 0, 0, 1, 0, 0);"> ' +
+        '<h3 class="title"> ' +
+        '<span class="span-en">Environment Inyroduction</span> ' +
+        "<span>介紹</span> " +
+        "<strong>環境</strong> " +
+        "</h3> " +
+        "</div> " +
+        "</div> " +
+        '<div class="col-md-5"></div> ' +
+        '<div class="col-md-5 py-2 text-center"> ' +
+        '<div class="container h-100 w-100"> ' +
+        '<div class="d-flex min-vh-50 text-center align-items-center" style = "border: #989898 1px solid;background-color: #fff;opacity: 0.6;"> ' +
+        '<div class="w-100"> ' +
+        '<div class="py-5 text-dark" style = "padding-top: 20% !important;padding-bottom: 20% !important;"> ' +
+        "<h2>" +
+        cn1 +
+        " " +
+        "<h2>" +
+        cn2 +
+        "</h2> " +
+        '<hr class="divider" /> ' +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div>" +
+        "</div >";
+
+      $("#swiper-environment").append(
+        '<div class="swiper-slide parallax-bg" style="background-image: url(~/../assets/img/page/about/environment/' +
+          val +
+          '.jpg);">' +
+          SwiperEnvironmentContent +
+          "</div>"
+      );
+    });
+
+    var swiper = new Swiper(".mySwiper", {
+      cssMode: true,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      keyboard: true,
+    });
+  }, 1000);
 
   $.each(dataMenu, function (index, val) {
     if (index == 1) {

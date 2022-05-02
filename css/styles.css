@@ -13529,6 +13529,19 @@ header.masthead p {
   /* background: #000; */
 }
 
+/* .swiper-slide {
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
+} */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
 .swiper-slide {
   font-size: 18px;
   color: #fff;
@@ -13537,11 +13550,18 @@ header.masthead p {
   padding: 40px 60px;
 }
 
+.swiper-slide img {
+  /* display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; */
+}
+
 .parallax-bg {
-  position: absolute;
+  /* position: absolute; */
   left: 0;
   top: 0;
-  width: 130%;
+  width: 100%;
   height: 100%;
   -webkit-background-size: cover;
   background-size: cover;
@@ -14011,6 +14031,12 @@ header.masthead p {
   .order-rwd-2 {
     order: 2;
   }
+  .text-introduction {
+    font-size: 0.5rem;
+  }
+  .text-introduction-dark {
+    font-size: 0.5rem;
+  }
 }
 @media screen and (min-width: 360px), (min-width: 414px) {
   .m-lt-10 {
@@ -14058,12 +14084,6 @@ header.masthead p {
     line-height: 0.1em;
     font-family: "Roboto", sans-serif;
   } */
-  .text-introduction {
-    font-size: 0.5rem;
-  }
-  .text-introduction-dark {
-    font-size: 0.5rem;
-  }
 }
 /* iPad Min*/
 @media screen and (min-width: 768px) {

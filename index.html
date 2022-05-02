@@ -167,6 +167,8 @@
                 $('#imagemodal').modal('show');
             });
 
+            /* 關於我們 - 環境介紹 */
+
             // var swiper = new Swiper(".mySwiper", {
             //     pagination: {
             //         el: ".swiper-pagination",
@@ -176,56 +178,6 @@
             //         },
             //     },
             // });
-
-            let SwiperEnvironmentContent =
-                '<div class="row gx-4 gx-lg-5 justify-content-center buil01-template-03"> ' +
-                '<div class="col-md-2"> ' +
-                '<div class="title-area fadeUp text-white" style="opacity: 1;transform: matrix(1, 0, 0, 1, 0, 0);"> ' +
-                '<h3 class="title"> ' +
-                '<span class="span-en">Environment Inyroduction</span> ' +
-                '<span>介紹</span> ' +
-                '<strong>環境</strong> ' +
-                '</h3> ' +
-                '</div> ' +
-                '</div> ' +
-                '<div class="col-md-5"></div> ' +
-                '<div class="col-md-5 py-2 text-center"> ' +
-                '<div class="container h-100 w-100"> ' +
-                '<div class="d-flex min-vh-50 text-center align-items-center" style = "border: #989898 1px solid;background-color: #fff;opacity: 0.6;"> ' +
-                '<div class="w-100"> ' +
-                '<div class="py-5 text-dark" style = "padding-top: 20% !important;padding-bottom: 20% !important;"> ' +
-                '<h2>提供您，優質的環境</h2> ' +
-                '<h2>是我們的責任</h2> ' +
-                '<hr class="divider" /> ' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div>' +
-                '</div >'
-
-            var ListSwiperEnvironment = [1, 2, 3, 4, 5, 6, 7, 8];
-            $.each(ListSwiperEnvironment, function (index, val) {
-                // console.log('val=', val);
-                $("#swiper-environment").append('<div class="swiper-slide parallax-bg" style="background-image: url(~/../assets/img/page/about/environment/' + val + '.jpg);">' +
-                    SwiperEnvironmentContent +
-                    '</div>')
-                if (val === index + 1) {
-                    var swiper = new Swiper(".mySwiper", {
-                        cssMode: true,
-                        navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                        },
-                        pagination: {
-                            el: ".swiper-pagination",
-                            clickable: true,
-                        },
-                        mousewheel: true,
-                        keyboard: true,
-                    });
-                }
-            });
 
 
             $(".scroll-down").on('click', function () {

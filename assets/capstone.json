@@ -212,6 +212,24 @@
     },
     {
       "service": "aboutus",
+      "environment": {
+        "content1": {
+          "cn1": "提供您優良的環境",
+          "cn2": "是我們的責任"
+        },
+        "content2": {
+          "cn1": "一對一面談環境",
+          "cn2": "隨時追蹤狀況"
+        },
+        "content3": {
+          "cn1": "本大樓採預約制",
+          "cn2": "重視隱私、安全"
+        },
+        "content4": {
+          "cn1": "多所國際學校",
+          "cn2": "校車 停靠點"
+        }
+      },
       "teaching": {
         "title": [
           {
