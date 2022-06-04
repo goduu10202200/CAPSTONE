@@ -3,12 +3,13 @@ function _GetUrlLanguage() {
   let ReturnData = "cn";
   // 測試階段 -> 預設中文
   // let LanguageSplit = location.href.split("#");
+  // console.log(LanguageSplit);
   // if (LanguageSplit.length > 1) {
   //   switch (LanguageSplit[1]) {
-  //     case "ln=cn":
+  //     case "cn":
   //       ReturnData = "cn";
   //       break;
-  //     case "ln=en":
+  //     case "en":
   //       ReturnData = "en";
   //       break;
   //   }
