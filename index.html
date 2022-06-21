@@ -340,16 +340,21 @@
         function GetPage(page, href) {
 
             if (page != "course" && page != "StudentService" && page != "moreinfo") {
-                console.log(page)
+
                 $("#main").load("./page/" + page + ".html", function (data) {
                     _SetMainData("", page);
+
+                    // if (page == "home" && page != href) {
+                    //     $('html,body').animate({
+                    //         scrollTop: $("#home").offset().top
+                    //     }, 100)
+                    // }
 
                     /* 關於我們 - 子項目 */
                     if (page == "aboutus" && page != href) {
                         event.preventDefault();
                         setTimeout(() => {
                             const hash = '#' + href;
-                            console.log('hash', hash)
                             $('html,body').animate({
                                 scrollTop: $(hash).offset().top
                             }, 800)

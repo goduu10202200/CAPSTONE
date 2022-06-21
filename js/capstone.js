@@ -406,6 +406,16 @@ function Menu_Language(lan) {
                 return li_pading;
               })
           );
+      } else if (val["service"] == "home") {
+        returnpage = $("<li>")
+          .attr("class", "nav-item")
+          .append(
+            $("<a>")
+              .attr("class", "nav-link")
+              .attr("onclick", "ChangePge('" + val["service"] + "')")
+              .attr("href", "")
+              .append(val[lan])
+          );
       } else {
         returnpage = $("<li>")
           .attr("class", "nav-item")
