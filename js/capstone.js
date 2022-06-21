@@ -147,9 +147,6 @@ function _EnData(page) {
     case "aboutus":
       Aboutus_Language("en");
       break;
-    case "course":
-      Course_Language("en");
-      break;
     /* 國際課程 */
     case "MHcourse":
       MHcourse_Language("en");
@@ -216,9 +213,6 @@ function _CnData(page) {
       break;
     case "aboutus":
       Aboutus_Language("cn");
-      break;
-    case "course":
-      Course_Language("cn");
       break;
     /* 國際課程 */
     case "MHcourse":
@@ -536,18 +530,6 @@ function Aboutus_Language(lan) {
       $("#AboutTitle").text(val["pading"][0][lan]);
     }
   });
-}
-
-function Course_Language(lan) {
-  let dataMenu = _GetMenu();
-  // Clear item
-  $("#AboutTitle").empty();
-
-  // Set Header
-  $("#header_course").css(
-    "background-image",
-    'url("~/../assets/img/page_header/about.jpg")'
-  );
 }
 
 /* 國際課程 - S */

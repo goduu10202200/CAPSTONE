@@ -299,11 +299,11 @@
             let lsCourse = ""
             let VerifyPage = href == undefined ? page : href;
 
-            if (page == "home") {
-                $("nav").removeClass("navbar-shrink");
-                $("#cs_logo").attr("src", "~/../assets/img/logo_white.png");
-                $(".language-sep").removeAttr("style");
-            }
+            // if (page == "home") {
+            //     $("nav").removeClass("navbar-shrink");
+            //     $("#cs_logo").attr("src", "~/../assets/img/logo_white.png");
+            //     $(".language-sep").removeAttr("style");
+            // }
 
             /* 驗證是否為主分類: -1:否 */
             if (page == "intcourse" || page == "verificationcourse") {
@@ -338,54 +338,58 @@
 
         /* 載入頁面 */
         function GetPage(page, href) {
-            $("#main").load("./page/" + page + ".html", function (data) {
-                _SetMainData("", page);
 
-                /* 關於我們 - 子項目 */
-                if (page == "aboutus" && page != href) {
-                    event.preventDefault();
-                    setTimeout(() => {
-                        const hash = '#' + href;
-                        console.log('hash', hash)
-                        $('html,body').animate({
-                            scrollTop: $(hash).offset().top
-                        }, 800)
-                    }, 500);
-                }
+            if (page != "course" && page != "StudentService" && page != "moreinfo") {
+                console.log(page)
+                $("#main").load("./page/" + page + ".html", function (data) {
+                    _SetMainData("", page);
 
-                if (page == "sevents") {
-                    swiperInstance = new Swiper(".events .swiper-container", {
-                        pagination: {
-                            el: ".events .swiper-pagination",
-                            clickable: true,
-                        },
-                        navigation: {
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                        },
-                        breakpoints: {
-                            320: {
-                                // screen >= 320px 
-                                slidesPerView: 1,
-                                spaceBetween: 20,
+                    /* 關於我們 - 子項目 */
+                    if (page == "aboutus" && page != href) {
+                        event.preventDefault();
+                        setTimeout(() => {
+                            const hash = '#' + href;
+                            console.log('hash', hash)
+                            $('html,body').animate({
+                                scrollTop: $(hash).offset().top
+                            }, 800)
+                        }, 500);
+                    }
+
+                    if (page == "sevents") {
+                        swiperInstance = new Swiper(".events .swiper-container", {
+                            pagination: {
+                                el: ".events .swiper-pagination",
+                                clickable: true,
                             },
-                            768: {
-                                // screen >= 768px
-                                slidesPerView: 2,
-                                spaceBetween: 20,
+                            navigation: {
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
                             },
-                            1600: {
-                                // screen >= 1280px
-                                slidesPerView: 2.5,
-                                spaceBetween: 2,
+                            breakpoints: {
+                                320: {
+                                    // screen >= 320px 
+                                    slidesPerView: 1,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    // screen >= 768px
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                1600: {
+                                    // screen >= 1280px
+                                    slidesPerView: 2.5,
+                                    spaceBetween: 2,
+                                },
                             },
-                        },
-                        slidesPerView: 2.1,
-                        speed: 800,
-                        // loop: true
-                    });
-                }
-            });
+                            slidesPerView: 2.1,
+                            speed: 800,
+                            // loop: true
+                        });
+                    }
+                });
+            }
         }
         /* 選單切換 - E */
     </script>
